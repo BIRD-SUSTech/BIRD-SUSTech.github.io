@@ -374,6 +374,12 @@
       
     
       
+        <a href="/opportunities/" data-tooltip="Join us">
+          Opportunities
+        </a>
+      
+    
+      
         <a href="/contact/" data-tooltip="Email, address, and location">
           Contact
         </a>
@@ -400,71 +406,247 @@
   
 
   <section class="background" data-size="page">
-    <div class="float">
-  
-<div class="portrait-wrapper">
-  <a class="portrait" data-style="" aria-label="Xu Zhu">
-    
+    <div class="member-profile-page">
 
-    <img src="/images/members/xuzhu.jpg" class="portrait-image" alt="member portrait" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
+  <h1 class="member__name">Xu Zhu</h1>
 
+  <div class="member__avatar">
     
-      <span class="portrait-name">
-        Xu Zhu
-      </span>
+      <img src="/images/members/xu-zhu.jpg" alt="Xu Zhu" class="member__avatar-img">
     
+  </div>
 
+  <div class="member__links">
     
-
-    
-      <span class="portrait-affiliation">
-        University of Colorado
-      </span>
-    
-  </a>
-</div>
-
-<div>
-  
-    
-    
-    
+      
+      
+      
 
 
 
   <div class="button-wrapper">
-    <a class="button" href="https://github.com/BIRD-SUSTech" data-style="bare" aria-label="button">
+    <a class="button" href="mailto:xu.zhu.sustech@gmail.com" data-tooltip="Email" data-style="bare" aria-label="Email">
+      <i class="icon fa-solid fa-envelope"></i>
       
+        <span>Email</span>
       
     </a>
   </div>
 
-<br>
+
+    
+  </div>
+
+  <div class="member__bio">
+    <p>Hi, I’m a PhD student in BIRD Lab. I earned dual bachelor’s degrees in Computer Science and Automation from Zhejiang University followed by a Master’s degree in Robotics from the University of Bristol. Then I worked for two years as a prediction algorithm engineer at Horizon Robotics (a leading autonomous driving/robotics company in China). With a strong interest in intelligent robotics, my current research focuses on the hardware design and intelligent control of bio-inspired humanoid robots.</p>
+
+  </div>
+  <div class="member__research">
+    <h2 class="member__research-title">Research Interests</h2>
+    
+    
+      <p class="member__empty">No research information available.</p>
+    
+  </div>
+
+
+  <div class="member__education">
+    
+    <h2 class="member__education-title">Education &amp; Working Experience</h2>
+      <ul class="member__education-list">
+        
+          <li class="member__education-item">
+            <strong class="member__education-degree">Autonomous Driving Prediction Algorithm Engineer</strong>
+            <span class="member__education-meta">Horizon Roboics, 2022~2024</span>
+            
+          </li>
+        
+          <li class="member__education-item">
+            <strong class="member__education-degree">Msc. Robotics</strong>
+            <span class="member__education-meta">University of Bristol, 2021~2022</span>
+            
+          </li>
+        
+          <li class="member__education-item">
+            <strong class="member__education-degree">Beng. Automation &amp; Computer Science and Technology</strong>
+            <span class="member__education-meta">Zhejiang University, 2016~2020</span>
+            
+          </li>
+        
+      </ul>
+    
+  </div>
+
   
-</div>
+
+  
+
+  <p class="member__search">
+    <a href="/research/?search=%22Xu%20Zhu%22%20" class="member__search-link">
+      🔍 Search for all Xu Zhu's papers on the Research page
+    </a>
+  </p>
 
 
 </div>
 
+<style>
+.member-profile-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-<p>Xu Zhu is a PhD student. He earned dual bachelor’s degrees in Computer Science and Automation from Zhejiang University followed by a Master’s degree in Robotics from the University of Bristol. He then worked for two years as a prediction algorithm engineer at Horizon Robotics (a leading autonomous driving/robotics company in China). With a strong interest in intelligent robotics, his current research focuses on the hardware design and intelligent control of bio-inspired humanoid robots.</p>
+.member__name {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.member__avatar {
+  text-align: center;
+  margin: 2rem 0 3rem 0;
+}
+
+.member__avatar-img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  /* border-radius: 50%; */
+  /* box-shadow: 0 4px 12px rgba(0,0,0,0.15); */
+  object-fit: cover;  /* 确保图片比例合适 */
+  /* aspect-ratio: 1/1;  保持正方形 */
+}
+
+.member__links {
+  text-align: center;
+  margin: 2rem 0 3rem 0;
+}
+
+.member__links .button {
+  margin: 0 0.5rem 0.5rem 0.5rem;
+  display: inline-block;
+}
+
+.member__bio {
+  margin: 0 auto 4rem auto;
+  padding: 0 1rem;
+  line-height: 1.8;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.member__research {
+  margin: 0 auto 4rem auto;
+  padding: 0 1rem;
+}
+
+.member__research-title {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #333;
+  font-size: 2rem;
+  border-bottom: 3px solid #f0f0f0;
+  padding-bottom: 0.75rem;
+}
+
+.member__research-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.member__research-item {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  border-left: 4px solid #28a745;  /* 绿色左边框，与education的蓝色区分 */
+  transition: all 0.2s ease;
+}
+
+.member__research-area {
+  font-size: 1.3rem;
+  color: #2c3e50;
+  margin: 0;
+  padding: 0.5rem 1.5rem 0.6rem 1.5rem; 
+  border-bottom: 1px solid #e9ecef;
+  background-color: rgba(40, 167, 69, 0.05); 
+}
+
+.member__research-description {
+  color: #555;
+  line-height: 1.8;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0.5rem 1.5rem 1.5rem 1.5rem;
+}
+
+.member__education {
+  margin: 0 auto 4rem auto;
+  padding: 0 1rem;
+}
+
+.member__education-title {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #333;
+  font-size: 2rem;
+  border-bottom: 3px solid #f0f0f0;
+  padding-bottom: 0.75rem;
+}
+
+.member__education-list {
+  list-style: none;
+  padding: 0;
+}
+
+.member__education-item {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  border-left: 4px solid #007bff;
+  transition: transform 0.2s ease;
+}
+
+/* .member__education-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+} */
+
+.member__education-degree {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.member__education-meta {
+  color: #6c757d;
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.member__education-description {
+  margin-top: 0.75rem;
+  color: #495057;
+  font-style: italic;
+  padding-top: 0.75rem;
+  border-top: 1px dashed #dee2e6;
+}
+
+</style>
 
 
 
-
-
-
-<p class="center">
-  <a href="/research/?search=%22Xu%20Zhu%22%20">
-    Search for Xu Zhu's papers on the Research page
-  </a>
-</p>
 
 
 
 <!--
 <p class="center">
-  <a href="/blog/?search=Xu%20Zhu">
+  <a href="/research/?search=%22Xu%20Zhu%22%20">
     See Xu Zhu's posts on the Blog page
   </a>
 </p>
