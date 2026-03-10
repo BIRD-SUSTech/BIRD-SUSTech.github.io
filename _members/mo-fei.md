@@ -5,6 +5,8 @@ role: phd
 links:
 #   github: BIRD-SUSTech
   email: murphymo621@gmail.com
+research:
+  - area: Biomimetic shoulder joint
 
 education:
   - degree: Msc. Biomedical Engineering
