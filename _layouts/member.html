@@ -27,9 +27,8 @@ layout: default
     {{ content }}
   </div>
   <div class="member__research">
-    <h2 class="member__research-title">Research Interests</h2>
-    
     {% if page.research %}
+    <h2 class="member__research-title">Research Interests</h2>
       <div class="member__research-list">
         {% for item in page.research %}
           <div class="member__research-item">
