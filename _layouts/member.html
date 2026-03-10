@@ -1,46 +1,247 @@
 ---
 layout: default
 ---
+<div class="member-profile-page">
 
-{% capture floatcontent %}
+  <h1 class="member__name">{{ page.name | default: page.title }}</h1>
 
-{% include portrait.html lookup=page.slug %}
+  <div class="member__avatar">
+    {% if page.image %}
+      <img src="{{ page.image | relative_url }}" alt="{{ page.name | default: page.title }}" class="member__avatar-img">
+    {% else %}
+      <div class="member__avatar-placeholder">
+        <span>{{ page.name | default: page.title | slice: 0 }}</span>
+      </div>
+    {% endif %}
+  </div>
 
-<div>
-  {% for link in page.links %}
-    {% assign key = link[0] %}
-    {% assign value = link[1] %}
-    {% include button.html type=key link=value style="bare" %}<br>
-  {% endfor %}
+  <div class="member__links">
+    {% for link in page.links %}
+      {% assign key = link[0] %}
+      {% assign value = link[1] %}
+      {% include button.html type=key link=value style="bare" %}
+    {% endfor %}
+  </div>
+
+  <div class="member__bio">
+    {{ content }}
+  </div>
+  <div class="member__research">
+    <h2 class="member__research-title">Research Interests</h2>
+    
+    {% if page.research %}
+      <div class="member__research-list">
+        {% for item in page.research %}
+          <div class="member__research-item">
+            {% if item.area %}
+              <h3 class="member__research-area">{{ item.area }}</h3>
+            {% endif %}
+            
+            {% if item.description %}
+              <p class="member__research-description">{{ item.description }}</p>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="member__empty">No research information available.</p>
+    {% endif %}
+  </div>
+
+
+  <div class="member__education">
+    {% if page.education %}
+    <h2 class="member__education-title">Education & Working Experience</h2>
+      <ul class="member__education-list">
+        {% for edu in page.education %}
+          <li class="member__education-item">
+            <strong class="member__education-degree">{{ edu.degree }}</strong>
+            <span class="member__education-meta">{{ edu.institution }}, {{ edu.year }}</span>
+            {% if edu.description %}
+              <p class="member__education-description">{{ edu.description }}</p>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p class="member__education-empty"></p>
+    {% endif %}
+  </div>
+
+  {% assign aliases = page.aliases
+    | default: page.name
+    | default: page.title
+    | join: ","
+    | split: ","
+    | array_filter
+  %}
+
+  {% capture search -%}
+    research/?search={% for alias in aliases %}"{{ alias }}" {% endfor %}
+  {%- endcapture %}
+
+  <p class="member__search">
+    <a href="{{ search | relative_url | uri_escape }}" class="member__search-link">
+      🔍 Search for all {{ page.name | default: page.title }}'s papers on the Research page
+    </a>
+  </p>
+
+
 </div>
 
-{% endcapture %}
+<style>
+.member-profile-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-{% include float.html content=floatcontent %}
+.member__name {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 2.5rem;
+  color: #333;
+}
 
-{{ content }}
+.member__avatar {
+  text-align: center;
+  margin: 2rem 0 3rem 0;
+}
 
-{% assign aliases = page.aliases
-  | default: page.name
-  | default: page.title
-  | join: ","
-  | split: ","
-  | array_filter
-%}
+.member__avatar-img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  /* border-radius: 50%; */
+  /* box-shadow: 0 4px 12px rgba(0,0,0,0.15); */
+  object-fit: cover;  /* 确保图片比例合适 */
+  /* aspect-ratio: 1/1;  保持正方形 */
+}
 
-{% capture search -%}
-  research/?search={% for alias in aliases %}"{{ alias }}" {% endfor %}
-{%- endcapture %}
+.member__links {
+  text-align: center;
+  margin: 2rem 0 3rem 0;
+}
 
-<p class="center">
-  <a href="{{ search | relative_url | uri_escape }}">
-    Search for {{ page.name | default: page.title }}'s papers on the Research page
-  </a>
-</p>
+.member__links .button {
+  margin: 0 0.5rem 0.5rem 0.5rem;
+  display: inline-block;
+}
 
-{% capture search -%}
-  blog/?search={{ page.name }}
-{%- endcapture %}
+.member__bio {
+  margin: 0 auto 4rem auto;
+  padding: 0 1rem;
+  line-height: 1.8;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.member__research {
+  margin: 0 auto 4rem auto;
+  padding: 0 1rem;
+}
+
+.member__research-title {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #333;
+  font-size: 2rem;
+  border-bottom: 3px solid #f0f0f0;
+  padding-bottom: 0.75rem;
+}
+
+.member__research-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.member__research-item {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  border-left: 4px solid #28a745;  /* 绿色左边框，与education的蓝色区分 */
+  transition: all 0.2s ease;
+}
+
+.member__research-area {
+  font-size: 1.3rem;
+  color: #2c3e50;
+  margin: 0;
+  padding: 0.5rem 1.5rem 0.6rem 1.5rem; 
+  border-bottom: 1px solid #e9ecef;
+  background-color: rgba(40, 167, 69, 0.05); 
+}
+
+.member__research-description {
+  color: #555;
+  line-height: 1.8;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0.5rem 1.5rem 1.5rem 1.5rem;
+}
+
+.member__education {
+  margin: 0 auto 4rem auto;
+  padding: 0 1rem;
+}
+
+.member__education-title {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #333;
+  font-size: 2rem;
+  border-bottom: 3px solid #f0f0f0;
+  padding-bottom: 0.75rem;
+}
+
+.member__education-list {
+  list-style: none;
+  padding: 0;
+}
+
+.member__education-item {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  border-left: 4px solid #007bff;
+  transition: transform 0.2s ease;
+}
+
+/* .member__education-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+} */
+
+.member__education-degree {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.member__education-meta {
+  color: #6c757d;
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.member__education-description {
+  margin-top: 0.75rem;
+  color: #495057;
+  font-style: italic;
+  padding-top: 0.75rem;
+  border-top: 1px dashed #dee2e6;
+}
+
+</style>
+
+
+
+
+
 
 <!--
 <p class="center">

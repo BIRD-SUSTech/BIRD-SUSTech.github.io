@@ -26,5 +26,11 @@ EXPOSE 4000
 EXPOSE 35729
 
 # run jekyll and cite process
-COPY .docker/entrypoint.sh /var
-CMD [ "/var/entrypoint.sh" ]
+COPY .docker/entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/entrypoint.sh && \
+    # 调试：检查文件是否存在
+    ls -la /usr/local/bin/entrypoint.sh
+
+# 使用 ENTRYPOINT 而不是 CMD
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+
