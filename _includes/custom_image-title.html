@@ -1,0 +1,14 @@
+<div class="custom_image-title
+    {% if include.flip %} flipped
+    {% endif %}"
+>
+  <div class="module-image">
+    <img src="{{ include.image | relative_url }}" alt="{{ include.title }}">
+  </div>
+  <div class="module-title">
+    <a href="{{ include.link | relative_url }}" class="title-link">
+      {{ include.title }}
+    </a>
+  </div>
+</div>
+

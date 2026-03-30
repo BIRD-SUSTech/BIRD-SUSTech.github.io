@@ -1,81 +1,31 @@
 ---
+header-dark: false
+footer-dark: false
 ---
 
-# BIRDLAB of SUSTech
-
-An engaging 1-3 sentence description of your lab.
+Welcome to the Bioinspired Intelligent Robot Design Lab (BIRD Lab) at the School of Automation and Intelligent Manufacturing (AIM), Southern University of Science and Technology (SUSTech). Led by Dr. Tianqi Yue, our lab draws inspiration from nature to develop robotic systems that match the agility, adaptability, efficiency and intelligence of natural organisms, through the integration of smart mechanics, advanced materials and artificial intelligence. We pursue research that achieves breakthroughs from 0 to 1!
 
 {% include section.html %}
 
-## Highlights
-
-{% capture text %}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
 {%
-  include button.html
+  include custom_image-title.html
+  image="/images/icon_research.png"
+  title="Reserch"
   link="research"
-  text="See our publications"
-  icon="fa-solid fa-arrow-right"
+%}
+
+{%
+  include custom_image-title.html
+  image="/images/icon_project.png"
+  title="Project"
   flip=true
-  style="bare"
-%}
-
-{% endcapture %}
-
-{%
-  include feature.html
-  image="images/photo.jpg"
-  link="research"
-  title="Our Research"
-  text=text
-%}
-
-{% capture text %}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-{%
-  include button.html
   link="projects"
-  text="Browse our projects"
-  icon="fa-solid fa-arrow-right"
-  flip=true
-  style="bare"
 %}
 
-{% endcapture %}
-
 {%
-  include feature.html
-  image="images/photo.jpg"
-  link="projects"
-  title="Our Projects"
-  flip=true
-  style="bare"
-  text=text
-%}
-
-{% capture text %}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-{%
-  include button.html
+  include custom_image-title.html
+  image="/images/icon_team.png"
+  title="Team"
   link="team"
-  text="Meet our team"
-  icon="fa-solid fa-arrow-right"
-  flip=true
-  style="bare"
-%}
-
-{% endcapture %}
-
-{%
-  include feature.html
-  image="images/photo.jpg"
-  link="team"
-  title="Our Team"
-  text=text
 %}
