@@ -8,12 +8,12 @@ proofer: false
 
 # site social media and other links
 links:
-  email: contact@BIRD-SUSTech.com
-  orcid: 0000-0001-8713-9213
-  google-scholar: ETJoidYAAAAJ
+  email: yuetq@sustech.edu.cn
+  orcid: 0000-0001-9746-7376
+  google-scholar: WtOwPDUAAAAJ
   github: BIRD-SUSTech
-  twitter: BIRD-SUSTech
-  youtube: BIRD-SUSTech
+  # twitter: BIRD-SUSTech
+  # youtube: BIRD-SUSTech
 
 ### jekyll settings
 
