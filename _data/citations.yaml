@@ -18,21 +18,6 @@
   plugin: sources.py
   file: sources.yaml
   image: images/citations/doi-10.1126-scirobotics-adr4264.png
-- id: doi:10.1109/TMECH.2024.3384432
-  title: 'DexiTac: Soft Dexterous Tactile Gripping'
-  authors:
-  - Chenghua Lu
-  - Kailuan Tang
-  - Max Yang
-  - Tianqi Yue
-  - Haoran Li
-  - Nathan F. Lepora
-  publisher: IEEE/ASME Transactions on Mechatronics
-  date: '2025-02-01'
-  link: https://doi.org/g9rccf
-  orcid: 0000-0001-9746-7376
-  plugin: orcid.py
-  file: orcid.yaml
 - id: doi:10.1038/s41467-024-48293-2
   title: Snail-inspired water-enhanced soft sliding suction for climbing robots
   authors:
