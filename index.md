@@ -11,7 +11,7 @@ Welcome to the Bioinspired Intelligent Robot Design Lab (BIRD Lab) at the School
 {%
   include custom_image-title.html
   image="/images/icon_research.png"
-  title="Reserch"
+  title="Research"
   link="research"
 %}
 
