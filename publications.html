@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-en="Publications · BIRD Lab" data-zh="论文 · BIRD Lab">Publications · BIRD Lab</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+    <style>
+        /* ===== 全局重置 & 基础 ===== */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #E85D04;
+            --color-primary-dark: #C94A00;
+            --color-primary-light: #FFF0E5;
+            --color-accent: #F9C74F;
+            --color-accent-green: #2A9D8F;
+            --color-accent-light: #FFF8E1;
+            --color-bg: #FDF8F5;
+            --color-card: #FFFFFF;
+            --color-text: #2D1B0E;
+            --color-text-secondary: #5A4030;
+            --color-text-light: #A48F7A;
+            --color-border: #F0E3D8;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.07), 0 2px 6px rgba(0, 0, 0, 0.03);
+            --shadow-lg: 0 12px 48px rgba(0, 0, 0, 0.10), 0 4px 12px rgba(0, 0, 0, 0.04);
+            --radius: 16px;
+            --radius-sm: 8px;
+            --transition: 0.30s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --nav-height: 72px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* 锚点跳转时预留吸顶导航栏高度，避免目标卡片被导航遮挡 */
+        [id] {
+            scroll-margin-top: calc(var(--nav-height) + 12px);
+        }
+
+        body {
+            font-family: var(--font);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+        a:hover {
+            color: var(--color-primary-dark);
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== 双语切换（经典 display 切换：当前语言显示、另一语言隐藏，布局由内容天然决定；激活语言淡入过渡） ===== */
+        .i18n {
+            display: inline;
+        }
+        .i18n > [data-lang] {
+            display: none;
+        }
+        html:not(.lang-zh) .i18n > [data-lang="en"],
+        html.lang-zh .i18n > [data-lang="zh"] {
+            display: inline;
+            animation: i18n-fade 0.7s ease-out;
+        }
+        @keyframes i18n-fade {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* ===== 滚动条 ===== */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--color-bg);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--color-primary);
+            border-radius: 20px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--color-primary-dark);
+        }
+
+        /* ===== 导航栏 ===== */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            height: var(--nav-height);
+            display: flex;
+            align-items: center;
+            background: rgba(255, 252, 248, 0.78);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border-bottom: 1px solid rgba(240, 227, 216, 0.5);
+            transition: background var(--transition), box-shadow var(--transition);
+        }
+        .navbar.scrolled {
+            background: rgba(255, 252, 248, 0.92);
+            box-shadow: var(--shadow-sm);
+        }
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            gap: 12px;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--color-text);
+            letter-spacing: -0.02em;
+            white-space: nowrap;
+        }
+        .navbar-brand img.navbar-logo {
+            height: 24px;
+            width: auto;
+        }
+        .navbar-brand .logo-text {
+            color: var(--color-primary);
+        }
+        .navbar-brand .sustech {
+            font-weight: 500;
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            background: var(--color-bg);
+            padding: 2px 12px;
+            border-radius: 40px;
+            border: 1px solid var(--color-border);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            list-style: none;
+        }
+        .nav-links li a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8px 18px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+            border-radius: 40px;
+            position: relative;
+            transition: color var(--transition), background var(--transition);
+        }
+        .nav-links li a::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 50%;
+            transform: translateX(-50%) scaleX(0);
+            width: 70%;
+            height: 2.5px;
+            background: var(--color-primary);
+            border-radius: 4px;
+            transition: transform var(--transition), opacity var(--transition);
+            opacity: 0;
+        }
+        .nav-links li a:hover {
+            color: var(--color-primary);
+            background: var(--color-primary-light);
+        }
+        .nav-links li a:hover::after {
+            transform: translateX(-50%) scaleX(1);
+            opacity: 1;
+        }
+        .nav-links li a.active {
+            color: var(--color-primary);
+            background: var(--color-primary-light);
+            font-weight: 600;
+        }
+        .nav-links li a.active::after {
+            transform: translateX(-50%) scaleX(1);
+            opacity: 1;
+        }
+
+        /* 语言切换按钮 */
+        .lang-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 4px;
+            padding: 6px 16px;
+            border-radius: 40px;
+            border: 1px solid var(--color-border);
+            background: var(--color-card);
+            color: var(--color-primary);
+            font-weight: 600;
+            font-size: 0.85rem;
+            font-family: var(--font);
+            cursor: pointer;
+            transition: background var(--transition), border-color var(--transition), transform var(--transition);
+            white-space: nowrap;
+        }
+        .lang-toggle:hover {
+            background: var(--color-primary-light);
+            border-color: var(--color-primary);
+            transform: scale(1.03);
+        }
+
+        /* 移动端汉堡菜单 */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 6px;
+            border-radius: 8px;
+            transition: background var(--transition);
+        }
+        .hamburger:hover {
+            background: var(--color-bg);
+        }
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2.5px;
+            background: var(--color-text);
+            border-radius: 4px;
+            transition: transform var(--transition), opacity var(--transition);
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* ===== 页面标题区 ===== */
+        .page-header {
+            padding: 60px 0 50px;
+            background: linear-gradient(165deg, #FFF0E5 0%, #FDE5D0 60%, #F9C74F 100%);
+            text-align: center;
+            border-bottom: 1px solid var(--color-border);
+        }
+        .page-header h1 {
+            font-size: clamp(2.6rem, 6vw, 4rem);
+            font-weight: 700;
+            color: var(--color-text);
+            letter-spacing: -0.02em;
+        }
+        .page-header h1 .accent {
+            color: var(--color-primary);
+        }
+        .page-header .subhead {
+            font-size: 1.2rem;
+            color: var(--color-text-secondary);
+            margin-top: 8px;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+        }
+
+        /* ===== 筛选栏 ===== */
+        .filter-bar {
+            background: var(--color-card);
+            border-bottom: 1px solid var(--color-border);
+            padding: 16px 0;
+            box-shadow: var(--shadow-sm);
+        }
+        .filter-bar .container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px 24px;
+        }
+        .filter-bar .label {
+            font-weight: 500;
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
+        }
+        .year-select {
+            appearance: none;
+            -webkit-appearance: none;
+            min-width: 150px;
+            padding: 8px 36px 8px 16px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--color-border);
+            background-color: var(--color-card);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23E85D04' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            background-size: 14px 14px;
+            color: var(--color-text);
+            font-family: var(--font);
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            color-scheme: light;
+            transition: border-color var(--transition), box-shadow var(--transition);
+        }
+        .year-select option {
+            background-color: var(--color-card);
+            color: var(--color-text);
+        }
+        .year-select:hover,
+        .year-select:focus {
+            border-color: var(--color-primary);
+            outline: none;
+            box-shadow: var(--shadow-sm);
+        }
+        /* 作者标识注释（可扩展：后续在此追加“# Equal contribution”等条目） */
+        .filter-note {
+            font-size: 0.8rem;
+            color: var(--color-text-light);
+            margin-left: 16px;
+        }
+        .pub-empty {
+            margin-top: 32px;
+            padding: 24px;
+            text-align: center;
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+            background: var(--color-card);
+            border: 1px dashed var(--color-border);
+            border-radius: var(--radius);
+        }
+
+        /* ===== 出版物列表 ===== */
+        .publications-section {
+            padding: 40px 0 60px;
+        }
+        .publication-item {
+            padding: 28px 0;
+            border-bottom: 1px solid var(--color-border);
+            transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+            border-radius: var(--radius-sm);
+            padding-left: 12px;
+            padding-right: 12px;
+            margin: 0 -12px;
+            cursor: default;
+        }
+        .publication-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+            background: var(--color-card);
+            border-bottom-color: transparent;
+        }
+        .publication-item:last-child {
+            border-bottom: none;
+        }
+
+        .publication-item .title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+        .publication-item .title a {
+            color: var(--color-text);
+            transition: color var(--transition);
+            text-decoration: none;
+        }
+        .publication-item .title a:hover {
+            color: var(--color-primary);
+            text-decoration: underline;
+        }
+
+        .publication-item .authors {
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 4px;
+            line-height: 1.6;
+        }
+        .publication-item .authors a {
+            color: var(--color-primary);
+            text-decoration: underline;
+            font-weight: 500;
+            transition: color var(--transition);
+        }
+        .publication-item .authors a:hover {
+            color: var(--color-primary-dark);
+        }
+        .publication-item .venue {
+            font-size: 0.85rem;
+            color: var(--color-text-light);
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+        .publication-item .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 6px;
+        }
+        .publication-item .tags a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4px 14px;
+            border-radius: 20px;
+            background: var(--color-primary-light);
+            color: var(--color-primary);
+            font-size: 0.78rem;
+            font-weight: 500;
+            transition: background var(--transition), color var(--transition), transform var(--transition);
+            text-decoration: none;
+        }
+        .publication-item .tags a:hover {
+            background: var(--color-primary);
+            color: #FFFFFF;
+            transform: scale(1.05);
+        }
+
+
+        /* ===== 页脚 ===== */
+        .footer {
+            background: var(--color-text);
+            color: rgba(255, 255, 255, 0.75);
+            padding: 48px 0 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            margin-top: 20px;
+        }
+        .footer .container {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .footer-top {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #FFFFFF;
+        }
+        .footer-brand img.footer-logo {
+            height: 40px;
+            width: auto;
+            background: #FFFFFF;
+            border-radius: 8px;
+            padding: 4px 10px;
+        }
+        .footer-brand .logo-text {
+            color: #F9C74F;
+        }
+        .footer-brand small {
+            font-weight: 400;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-left: 10px;
+        }
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.60);
+            font-size: 0.95rem;
+            font-weight: 400;
+            text-align: center;
+            transition: color var(--transition), transform var(--transition);
+        }
+        .footer-links a:hover {
+            color: #FFFFFF;
+            transform: translateY(-2px);
+        }
+        .footer-bottom {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.40);
+        }
+        .footer-bottom .social {
+            display: flex;
+            gap: 16px;
+        }
+        .footer-bottom .social a {
+            color: rgba(255, 255, 255, 0.35);
+            font-size: 0.90rem;
+            text-align: center;
+            transition: color var(--transition), transform var(--transition);
+        }
+        .footer-bottom .social a:hover {
+            color: #FFFFFF;
+            transform: translateY(-2px);
+        }
+        .footer-bottom .social a.social-link {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* 小红书二维码模态框（淡入淡出） */
+        .qr-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.25s ease, visibility 0s linear 0.25s;
+        }
+        .qr-modal.open {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transition: opacity 0.3s ease;
+        }
+        .qr-modal-content {
+            background: #FFFFFF;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            transform: translateY(10px);
+            transition: transform 0.3s ease;
+        }
+        .qr-modal.open .qr-modal-content {
+            transform: translateY(0);
+        }
+        .qr-modal-content img {
+            display: block;
+            max-width: 260px;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* ===== 滚动动画 ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.06s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.12s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.18s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.24s;
+        }
+
+        /* ===== 响应式 ===== */
+        @media (max-width: 768px) {
+            :root {
+                --nav-height: 64px;
+            }
+            .page-header {
+                padding: 40px 0 32px;
+            }
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            .publications-section {
+                padding: 24px 0 40px;
+            }
+            .publication-item {
+                padding: 20px 8px;
+                margin: 0 -8px;
+            }
+            .publication-item .title {
+                font-size: 1.05rem;
+            }
+            .filter-bar .container {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            .navbar-brand .sustech {
+                display: none;
+            }
+
+            /* 导航菜单 */
+            .nav-links {
+                position: fixed;
+                top: var(--nav-height);
+                left: 0;
+                right: 0;
+                background: rgba(255, 252, 248, 0.96);
+                backdrop-filter: blur(16px);
+                -webkit-backdrop-filter: blur(16px);
+                flex-direction: column;
+                padding: 20px 24px 28px;
+                gap: 4px;
+                border-bottom: 1px solid var(--color-border);
+                transform: translateY(-120%);
+                opacity: 0;
+                transition: transform 0.35s ease, opacity 0.35s ease;
+                box-shadow: var(--shadow-md);
+                border-radius: 0 0 var(--radius) var(--radius);
+                pointer-events: none;
+            }
+            .nav-links.open {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: auto;
+            }
+            .nav-links li a {
+                padding: 12px 16px;
+                width: 100%;
+                text-align: center;
+                font-size: 1.05rem;
+            }
+            .nav-links li a::after {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+
+            .footer-top {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+            .filter-note {
+                margin-left: 0;
+            }
+            .publication-item .authors {
+                font-size: 0.88rem;
+            }
+            .publication-item .venue {
+                font-size: 0.78rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== 导航栏 ===== -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="主导航">
+        <div class="container">
+            <div class="navbar-brand">
+                <img src="images/logos/sustech-logo.png" alt="SUSTech" class="navbar-logo" />
+                <span class="logo-text">BIRD</span> Lab
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html"><span class="i18n"><span data-lang="en">Home</span><span data-lang="zh">首页</span></span></a></li>
+                <li><a href="people.html"><span class="i18n"><span data-lang="en">People</span><span data-lang="zh">成员</span></span></a></li>
+                <li><a href="research.html"><span class="i18n"><span data-lang="en">Research</span><span data-lang="zh">研究</span></span></a></li>
+                <li><a href="publications.html" class="active"><span class="i18n"><span data-lang="en">Publications</span><span data-lang="zh">论文</span></span></a></li>
+                <li><a href="join.html"><span class="i18n"><span data-lang="en">Join Us</span><span data-lang="zh">加入我们</span></span></a></li>
+            </ul>
+
+            <button class="lang-toggle" id="langToggle" aria-label="Switch language / 切换语言">
+                <span class="i18n"><span data-lang="en">中文</span><span data-lang="zh">EN</span></span>
+            </button>
+
+            <button class="hamburger" id="hamburger" aria-label="切换菜单" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== 页面标题区 ===== -->
+    <header class="page-header">
+        <div class="container">
+            <h1><span class="i18n"><span data-lang="en">Our <span class="accent">Publications</span></span><span data-lang="zh">我们的<span class="accent">论文</span></span></span></h1>
+            <p class="subhead"><span class="i18n"><span data-lang="en">Inspired by nature · Publishing frontier results · Advancing bioinspired robotics</span><span data-lang="zh">探索自然智慧 · 发表前沿成果 · 推动仿生机器人发展</span></span></p>
+        </div>
+    </header>
+
+    <!-- ===== 年份筛选（下拉菜单） ===== -->
+    <div class="filter-bar">
+        <div class="container">
+            <label class="label" for="yearFilter">📅 <span class="i18n"><span data-lang="en">Filter by year:</span><span data-lang="zh">按年份筛选：</span></span></label>
+            <select id="yearFilter" class="year-select">
+                <option value="all" data-en="All Years" data-zh="全部年份">All Years</option>
+                <option value="2025">2025</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+            </select>
+            <label class="label" for="researchFilter">🔬 <span class="i18n"><span data-lang="en">Filter by research:</span><span data-lang="zh">按研究方向筛选：</span></span></label>
+            <select id="researchFilter" class="year-select">
+                <option value="all" data-en="All Research" data-zh="全部研究方向">All Research</option>
+                <option value="suction-adhesion" data-en="Suction Adhesion" data-zh="真空吸附">Suction Adhesion</option>
+                <option value="humanoid-robotics" data-en="Humanoid Robotics" data-zh="仿生人形机器人">Humanoid Robotics</option>
+                <option value="artificial-joints" data-en="Artificial Joints" data-zh="人工关节">Artificial Joints</option>
+                <option value="artificial-muscles" data-en="Artificial Muscles" data-zh="人工肌肉">Artificial Muscles</option>
+                <option value="joint-muscle-control" data-en="Control of Joint-Muscle Complex" data-zh="关节肌肉复合体的控制">Control of Joint-Muscle Complex</option>
+            </select>
+            <label class="label" for="keywordFilter">🔖 <span class="i18n"><span data-lang="en">Filter by keywords:</span><span data-lang="zh">按关键词筛选：</span></span></label>
+            <select id="keywordFilter" class="year-select">
+                <option value="all" data-en="All Keywords" data-zh="全部关键词">All Keywords</option>
+                <option value="actuation" data-en="Actuation" data-zh="驱动">Actuation</option>
+                <option value="bio-inspired-control" data-en="Bio-inspired Control" data-zh="生物启发控制">Bio-inspired Control</option>
+                <option value="climbing" data-en="Climbing" data-zh="爬壁">Climbing</option>
+                <option value="cooperative-control" data-en="Cooperative Control" data-zh="协同控制">Cooperative Control</option>
+                <option value="gripping" data-en="Gripping" data-zh="抓取">Gripping</option>
+                <option value="humanoid-robotics" data-en="Humanoid Robotics" data-zh="人形机器人">Humanoid Robotics</option>
+                <option value="multi-dof" data-en="Multi-DOF" data-zh="多自由度">Multi-DOF</option>
+                <option value="physical-intelligence" data-en="Physical Intelligence" data-zh="物理智能">Physical Intelligence</option>
+                <option value="rigid-flexible-coupling" data-en="Rigid-Flexible Coupling" data-zh="刚柔耦合">Rigid-Flexible Coupling</option>
+                <option value="soft-robotics" data-en="Soft Robotics" data-zh="软体机器人">Soft Robotics</option>
+                <option value="suction-adhesion" data-en="Suction Adhesion" data-zh="真空吸附">Suction Adhesion</option>
+                <option value="superlubrication" data-en="Superlubrication" data-zh="超润滑">Superlubrication</option>
+                <option value="transmission" data-en="Transmission" data-zh="传动">Transmission</option>
+                <option value="variable-stiffness" data-en="Variable Stiffness" data-zh="变刚度">Variable Stiffness</option>
+            </select>
+            <span class="filter-note"><span class="i18n"><span data-lang="en">* Corresponding author | † Co-first author</span><span data-lang="zh">* 通讯作者 | † 共同第一作者</span></span></span>
+        </div>
+    </div>
+
+    <!-- ===== 出版物列表 ===== -->
+    <section class="publications-section" id="publications">
+        <div class="container">
+
+                        <!-- ====== 论文 1 ====== -->
+            <div class="publication-item reveal reveal-delay-1" id="paper-science-robotics-2025" data-year="2025" data-research="suction-adhesion" data-keywords="suction-adhesion,soft-robotics,physical-intelligence">
+                <div class="title">
+                    <a href="https://doi.org/10.1126/scirobotics.adr4264" target="_blank" rel="noopener">
+                        <span class="i18n"><span data-lang="en">Embodying Soft Robots with Octopus-Inspired Hierarchical Suction Intelligence</span><span data-lang="zh">具身软体机器人的章鱼启发层级吸盘智能</span></span>
+                    </a>
+                </div>
+                <div class="authors"><a href="people.html#tianqi-yue">Tianqi Yue</a>, Chenghua Lu, Kailuan Tang, Qiukai Qi, Z. Lu, L. Y. Lee, H. Bloomfield-Gadêlha, &amp; J. Rossiter*</div>
+                <div class="venue">Science Robotics, 10(102), eadr4264, 2025.</div>
+                <div class="tags">
+                    <a href="publications.html?keyword=suction-adhesion"><span class="i18n"><span data-lang="en">Suction Adhesion</span><span data-lang="zh">真空吸附</span></span></a>
+                    <a href="publications.html?keyword=soft-robotics"><span class="i18n"><span data-lang="en">Soft Robotics</span><span data-lang="zh">软体机器人</span></span></a>
+                    <a href="publications.html?keyword=physical-intelligence"><span class="i18n"><span data-lang="en">Physical Intelligence</span><span data-lang="zh">物理智能</span></span></a>
+                </div>
+            </div>
+
+            <!-- ====== 论文 2 ====== -->
+            <div class="publication-item reveal reveal-delay-2" id="paper-nature-comm-2024" data-year="2024" data-research="suction-adhesion" data-keywords="suction-adhesion,climbing">
+                <div class="title">
+                    <a href="https://doi.org/10.1038/s41467-024-48293-2" target="_blank" rel="noopener">
+                        <span class="i18n"><span data-lang="en">Snail-Inspired Water-Enhanced Soft Sliding Suction for Climbing Robots</span><span data-lang="zh">受蜗牛启发的水增强软体滑动吸附爬壁机器人</span></span>
+                    </a>
+                </div>
+                <div class="authors"><a href="people.html#tianqi-yue">Tianqi Yue</a>, H. Bloomfield-Gadêlha, &amp; J. Rossiter*</div>
+                <div class="venue">Nature Communications, 15(1), 4038, 2024.</div>
+                <div class="tags">
+                    <a href="publications.html?keyword=suction-adhesion"><span class="i18n"><span data-lang="en">Suction Adhesion</span><span data-lang="zh">真空吸附</span></span></a>
+                    <a href="publications.html?keyword=climbing"><span class="i18n"><span data-lang="en">Climbing</span><span data-lang="zh">爬壁</span></span></a>
+                </div>
+            </div>
+
+            <!-- ====== 论文 3 ====== -->
+            <div class="publication-item reveal reveal-delay-3" data-year="2024" data-research="suction-adhesion" data-keywords="suction-adhesion,gripping">
+                <div class="title">
+                    <a href="https://doi.org/10.1073/pnas.2314359121" target="_blank" rel="noopener">
+                        <span class="i18n"><span data-lang="en">Bioinspired Multiscale Adaptive Suction on Complex Dry Surfaces Enhanced by Regulated Water Secretion</span><span data-lang="zh">受调控水分泌增强的复杂干表面仿生多尺度自适应吸附</span></span>
+                    </a>
+                </div>
+                <div class="authors"><a href="people.html#tianqi-yue">Tianqi Yue</a>, W. Si, A. Keller, C. Yang, H. Bloomfield-Gadêlha, &amp; J. Rossiter*</div>
+                <div class="venue">Proceedings of the National Academy of Sciences, 121(16), e2314359121, 2024.</div>
+                <div class="tags">
+                    <a href="publications.html?keyword=suction-adhesion"><span class="i18n"><span data-lang="en">Suction Adhesion</span><span data-lang="zh">真空吸附</span></span></a>
+                    <a href="publications.html?keyword=gripping"><span class="i18n"><span data-lang="en">Gripping</span><span data-lang="zh">抓取</span></span></a>
+                </div>
+            </div>
+
+            <!-- ====== 论文 4 ====== -->
+            <div class="publication-item reveal reveal-delay-4" data-year="2024" data-research="general" data-keywords="soft-robotics,gripping,variable-stiffness">
+                <div class="title">
+                    <a href="https://scholar.google.com/scholar?q=A%20Phase-Change%20Emulsion%20Jamming%20Gripper%20for%20Manipulation%20of%20Micro-Scale%20Textured%20Surfaces" target="_blank" rel="noopener">
+                        <span class="i18n"><span data-lang="en">A Phase-Change Emulsion Jamming Gripper for Manipulation of Micro-Scale Textured Surfaces</span><span data-lang="zh">用于微尺度纹理表面操控的相变乳液夹持器</span></span>
+                    </a>
+                </div>
+                <div class="authors">A. Keller, <a href="people.html#tianqi-yue">Tianqi Yue*</a>, Qiukai Qi, A. T. Conn, &amp; J. Rossiter</div>
+                <div class="venue">IEEE International Conference on Robotics and Automation (ICRA), pp. 706-712, 2024.</div>
+                <div class="tags">
+                    <a href="publications.html?keyword=soft-robotics"><span class="i18n"><span data-lang="en">Soft Robotics</span><span data-lang="zh">软体机器人</span></span></a>
+                    <a href="publications.html?keyword=gripping"><span class="i18n"><span data-lang="en">Gripping</span><span data-lang="zh">抓取</span></span></a>
+                    <a href="publications.html?keyword=variable-stiffness"><span class="i18n"><span data-lang="en">Variable Stiffness</span><span data-lang="zh">变刚度</span></span></a>
+                </div>
+            </div>
+
+            <!-- ====== 论文 5 ====== -->
+            <div class="publication-item reveal reveal-delay-5" data-year="2023" data-research="suction-adhesion" data-keywords="suction-adhesion,gripping">
+                <div class="title">
+                    <a href="https://scholar.google.com/scholar?q=Shape-Conformable%20Suction%20Cups%20with%20Controllable%20Adaptive%20Suction%20on%20Complex%20Surfaces" target="_blank" rel="noopener">
+                        <span class="i18n"><span data-lang="en">Shape-Conformable Suction Cups with Controllable Adaptive Suction on Complex Surfaces</span><span data-lang="zh">复杂表面上具有可控自适应吸附的形状贴合吸盘</span></span>
+                    </a>
+                </div>
+                <div class="authors"><a href="people.html#tianqi-yue">Tianqi Yue*</a>, H. Bloomfield-Gadêlha, &amp; J. M. Rossiter</div>
+                <div class="venue">IEEE Robotics and Automation Letters, 8(11), 7735-7742, 2023.</div>
+                <div class="tags">
+                    <a href="publications.html?keyword=suction-adhesion"><span class="i18n"><span data-lang="en">Suction Adhesion</span><span data-lang="zh">真空吸附</span></span></a>
+                    <a href="publications.html?keyword=gripping"><span class="i18n"><span data-lang="en">Gripping</span><span data-lang="zh">抓取</span></span></a>
+                </div>
+            </div>
+
+            <!-- ====== 论文 6 ====== -->
+            <div class="publication-item reveal reveal-delay-6" data-year="2023" data-research="general" data-keywords="soft-robotics,variable-stiffness">
+                <div class="title">
+                    <a href="https://scholar.google.com/scholar?q=A%20Silicone-sponge-based%20Variable-stiffness%20Device" target="_blank" rel="noopener">
+                        <span class="i18n"><span data-lang="en">A Silicone-Sponge-Based Variable-Stiffness Device</span><span data-lang="zh">基于硅胶海绵的可变刚度装置</span></span>
+                    </a>
+                </div>
+                <div class="authors"><a href="people.html#tianqi-yue">Tianqi Yue*</a>, T. L. You, H. Philamore, H. Bloomfield-Gadêlha, &amp; J. M. Rossiter</div>
+                <div class="venue">IEEE International Conference on Robotics and Automation (ICRA), pp. 627-633, 2023.</div>
+                <div class="tags">
+                    <a href="publications.html?keyword=soft-robotics"><span class="i18n"><span data-lang="en">Soft Robotics</span><span data-lang="zh">软体机器人</span></span></a>
+                    <a href="publications.html?keyword=variable-stiffness"><span class="i18n"><span data-lang="en">Variable Stiffness</span><span data-lang="zh">变刚度</span></span></a>
+                </div>
+            </div>
+
+            <!-- ====== 论文 7 ====== -->
+            <div class="publication-item reveal reveal-delay-7" data-year="2023" data-research="suction-adhesion" data-keywords="suction-adhesion,soft-robotics">
+                <div class="title">
+                    <a href="https://scholar.google.com/scholar?q=Hydrogel-actuated%20Soft%20Sucker%20with%20Mucus%20Secretion" target="_blank" rel="noopener">
+                        <span class="i18n"><span data-lang="en">Hydrogel-Actuated Soft Sucker with Mucus Secretion</span><span data-lang="zh">具有黏液分泌功能的水凝胶驱动软体吸盘</span></span>
+                    </a>
+                </div>
+                <div class="authors"><a href="people.html#tianqi-yue">Tianqi Yue*</a>, A. Keller, D. Gosden, H. Bloomfield-Gadêlha, &amp; J. Rossiter</div>
+                <div class="venue">IEEE International Conference on Soft Robotics (RoboSoft), pp. 1-6, 2023.</div>
+                <div class="tags">
+                    <a href="publications.html?keyword=suction-adhesion"><span class="i18n"><span data-lang="en">Suction Adhesion</span><span data-lang="zh">真空吸附</span></span></a>
+                    <a href="publications.html?keyword=soft-robotics"><span class="i18n"><span data-lang="en">Soft Robotics</span><span data-lang="zh">软体机器人</span></span></a>
+                </div>
+            </div>
+
+            <!-- ====== 论文 8 ====== -->
+            <div class="publication-item reveal reveal-delay-8" data-year="2022" data-research="suction-adhesion" data-keywords="suction-adhesion,soft-robotics">
+                <div class="title">
+                    <a href="https://scholar.google.com/scholar?q=A%20Contact-triggered%20Adaptive%20Soft%20Suction%20Cup" target="_blank" rel="noopener">
+                        <span class="i18n"><span data-lang="en">A Contact-Triggered Adaptive Soft Suction Cup</span><span data-lang="zh">接触触发的自适应软体吸盘</span></span>
+                    </a>
+                </div>
+                <div class="authors"><a href="people.html#tianqi-yue">Tianqi Yue*</a>, W. Si, A. J. Partridge, C. Yang, A. T. Conn, H. Bloomfield-Gadêlha, &amp; J. M. Rossiter</div>
+                <div class="venue">IEEE Robotics and Automation Letters, 7(2), 3600-3607, 2022. (With ICRA 2022 oral presentation)</div>
+                <div class="tags">
+                    <a href="publications.html?keyword=suction-adhesion"><span class="i18n"><span data-lang="en">Suction Adhesion</span><span data-lang="zh">真空吸附</span></span></a>
+                    <a href="publications.html?keyword=soft-robotics"><span class="i18n"><span data-lang="en">Soft Robotics</span><span data-lang="zh">软体机器人</span></span></a>
+                </div>
+            </div>
+
+            <!-- ====== 论文 9 ====== -->
+            <div class="publication-item reveal reveal-delay-9" data-year="2021" data-research="general" data-keywords="soft-robotics">
+                <div class="title">
+                    <a href="https://scholar.google.com/scholar?q=Friction-driven%20three-foot%20robot%20inspired%20by%20snail%20movement" target="_blank" rel="noopener">
+                        <span class="i18n"><span data-lang="en">Friction-Driven Three-Foot Robot Inspired by Snail Movement</span><span data-lang="zh">受蜗牛运动启发的摩擦驱动三足机器人</span></span>
+                    </a>
+                </div>
+                <div class="authors"><a href="people.html#tianqi-yue">Tianqi Yue*</a>, H. Bloomfield-Gadêlha, &amp; J. Rossiter</div>
+                <div class="venue">IEEE International Conference on Robotics and Automation (ICRA), pp. 9820-9825, 2021.</div>
+                <div class="tags">
+                    <a href="publications.html?keyword=soft-robotics"><span class="i18n"><span data-lang="en">Soft Robotics</span><span data-lang="zh">软体机器人</span></span></a>
+                </div>
+            </div>
+
+            <p class="pub-empty" id="noResults" style="display:none;">
+                <span class="i18n"><span data-lang="en">No publications match the selected filters.</span><span data-lang="zh">没有符合所选筛选条件的论文。</span></span>
+            </p>
+
+        </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="images/logos/birdlab-logo.png" alt="BIRD Lab" class="footer-logo" />
+                    <small>SUSTech · Bioinspired Intelligent Robotic Design Lab</small>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html"><span class="i18n"><span data-lang="en">Home</span><span data-lang="zh">首页</span></span></a>
+                    <a href="people.html"><span class="i18n"><span data-lang="en">People</span><span data-lang="zh">成员</span></span></a>
+                    <a href="research.html"><span class="i18n"><span data-lang="en">Research</span><span data-lang="zh">研究</span></span></a>
+                    <a href="publications.html"><span class="i18n"><span data-lang="en">Publications</span><span data-lang="zh">论文</span></span></a>
+                    <a href="join.html"><span class="i18n"><span data-lang="en">Join Us</span><span data-lang="zh">加入我们</span></span></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 BIRD Lab, SUSTech. All rights reserved.</span>
+                <div class="social">
+                    <a href="#" id="qrLink" class="social-link"><span class="i18n"><span data-lang="en">Xiaohongshu</span><span data-lang="zh">小红书</span></span></a>
+                    <a href="mailto:yuetq@sustech.edu.cn" class="social-link"><span class="i18n"><span data-lang="en">Email</span><span data-lang="zh">邮箱</span></span></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ===== 小红书二维码模态框 ===== -->
+    <div class="qr-modal" id="qrModal">
+        <div class="qr-modal-content">
+            <img src="images/social/xiaohongshu.jpg" alt="Xiaohongshu QR Code / 小红书二维码" />
+        </div>
+    </div>
+
+
+    <!-- ===== JavaScript ===== -->
+    <script>
+        (function() {
+            'use strict';
+
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', function() {
+                navbar.classList.toggle('scrolled', window.pageYOffset > 20);
+            }, { passive: true });
+
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('navLinks');
+            hamburger.addEventListener('click', function() {
+                const isOpen = navLinks.classList.toggle('open');
+                hamburger.classList.toggle('active');
+                hamburger.setAttribute('aria-expanded', isOpen);
+            });
+            navLinks.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('open');
+                    hamburger.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            const revealElements = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+            revealElements.forEach(function(el) { observer.observe(el); });
+
+            // 语言切换（默认英文，localStorage 记忆）
+            const KEY = 'birdlab-lang';
+            const htmlEl = document.documentElement;
+            let lang = 'en';
+            try { lang = (localStorage.getItem(KEY) === 'zh') ? 'zh' : 'en'; } catch (e) {}
+            htmlEl.classList.toggle('lang-zh', lang === 'zh');
+            const titleEl = document.querySelector('title');
+            function syncTitle() {
+                if (titleEl && titleEl.getAttribute('data-en') && titleEl.getAttribute('data-zh')) {
+                    document.title = (lang === 'zh') ? titleEl.getAttribute('data-zh') : titleEl.getAttribute('data-en');
+                }
+                // 同步下拉菜单“全部年份 / All Years”文本（option 内不能嵌套 HTML，用 JS 更新）
+                document.querySelectorAll('option[data-en][data-zh]').forEach(function(o) {
+                    o.textContent = (lang === 'zh') ? o.getAttribute('data-zh') : o.getAttribute('data-en');
+                });
+            }
+            syncTitle();
+            const langBtn = document.getElementById('langToggle');
+            if (langBtn) {
+                langBtn.addEventListener('click', function() {
+                    lang = (lang === 'zh') ? 'en' : 'zh';
+                    try { localStorage.setItem(KEY, lang); } catch (e) {}
+                    htmlEl.classList.toggle('lang-zh', lang === 'zh');
+                    syncTitle();
+                });
+            }
+
+            // 组合筛选（年份 + 研究方向 + 关键词），支持 URL 参数 ?research=xxx
+            const yearFilter = document.getElementById('yearFilter');
+            const researchFilter = document.getElementById('researchFilter');
+            const keywordFilter = document.getElementById('keywordFilter');
+            const noResults = document.getElementById('noResults');
+            const researchChildren = ['artificial-joints', 'artificial-muscles', 'joint-muscle-control'];
+
+            function applyFilters() {
+                const year = yearFilter ? yearFilter.value : 'all';
+                const research = researchFilter ? researchFilter.value : 'all';
+                const keyword = keywordFilter ? keywordFilter.value : 'all';
+                let visibleCount = 0;
+                document.querySelectorAll('.publication-item').forEach(function(item) {
+                    let show = true;
+                    if (year !== 'all' && item.getAttribute('data-year') !== year) { show = false; }
+                    if (show && research !== 'all') {
+                        const tags = (item.getAttribute('data-research') || '').split(/\s+/);
+                        if (research === 'humanoid-robotics') {
+                            show = tags.indexOf('humanoid-robotics') !== -1 || researchChildren.some(function(t) { return tags.indexOf(t) !== -1; });
+                        } else {
+                            show = tags.indexOf(research) !== -1;
+                        }
+                    }
+                    if (show && keyword !== 'all') {
+                        const kws = (item.getAttribute('data-keywords') || '').split(',');
+                        show = kws.indexOf(keyword) !== -1;
+                    }
+                    if (show) { visibleCount++; item.style.display = ''; } else { item.style.display = 'none'; }
+                });
+                if (noResults) { noResults.style.display = (visibleCount === 0) ? '' : 'none'; }
+            }
+            if (yearFilter) { yearFilter.addEventListener('change', applyFilters); }
+            if (researchFilter) { researchFilter.addEventListener('change', applyFilters); }
+            if (keywordFilter) { keywordFilter.addEventListener('change', applyFilters); }
+            // 读取 URL 参数 ?research=xxx 与 ?keyword=xxx，自动应用对应筛选（可同时生效）
+            (function() {
+                let params = null;
+                try { params = new URLSearchParams(window.location.search); } catch (e) {}
+                if (params) {
+                    const r = params.get('research');
+                    if (researchFilter && r && ['suction-adhesion', 'humanoid-robotics', 'artificial-joints', 'artificial-muscles', 'joint-muscle-control'].indexOf(r) !== -1) {
+                        researchFilter.value = r;
+                    }
+                    const k = params.get('keyword');
+                    if (keywordFilter && k && keywordFilter.querySelector('option[value="' + k + '"]')) {
+                        keywordFilter.value = k;
+                    }
+                }
+                applyFilters();
+            })();
+
+            console.log('✅ BIRD Lab Publications 页面已加载。');
+            // 小红书二维码模态框
+            const qrModal = document.getElementById('qrModal');
+            const qrLink = document.getElementById('qrLink');
+            if (qrModal && qrLink) {
+                qrLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    qrModal.classList.add('open');
+                });
+                qrModal.addEventListener('click', function(e) {
+                    if (e.target === qrModal) { qrModal.classList.remove('open'); }
+                });
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape') { qrModal.classList.remove('open'); }
+                });
+            }
+
+        })();
+    </script>
+</body>
+</html>
