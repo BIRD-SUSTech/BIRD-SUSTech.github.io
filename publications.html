@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/logos/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="images/logos/favicon.png" />
     <title data-en="Publications · BIRD Lab" data-zh="论文 · BIRD Lab">Publications · BIRD Lab</title>
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -150,6 +152,13 @@
             color: var(--color-text);
             letter-spacing: -0.02em;
             white-space: nowrap;
+        }
+        .navbar-brand a.navbar-brand-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: inherit;
+            text-decoration: none;
         }
         .navbar-brand img.navbar-logo {
             height: 24px;
@@ -363,6 +372,22 @@
             background: var(--color-card);
             border: 1px dashed var(--color-border);
             border-radius: var(--radius);
+        }
+        /* 筛选后论文高亮闪烁 */
+        @keyframes highlight-flash {
+            0% {
+                background-color: var(--color-primary-light);
+                border-left: 4px solid var(--color-primary);
+            }
+            100% {
+                background-color: transparent;
+                border-left: 4px solid transparent;
+            }
+        }
+        .highlight-flash {
+            animation: highlight-flash 1.5s ease 3 forwards;
+            border-left: 4px solid var(--color-primary);
+            padding-left: 12px;
         }
 
         /* ===== 出版物列表 ===== */
@@ -712,8 +737,10 @@
     <nav class="navbar" id="navbar" role="navigation" aria-label="主导航">
         <div class="container">
             <div class="navbar-brand">
-                <img src="images/logos/sustech-logo.png" alt="SUSTech" class="navbar-logo" />
-                <span class="logo-text">BIRD</span> Lab
+                <a href="index.html" class="navbar-brand-link" aria-label="BIRD Lab Home">
+                    <img src="images/logos/sustech-logo.png" alt="SUSTech" class="navbar-logo" />
+                    <span class="logo-text">BIRD</span> Lab
+                </a>
             </div>
 
             <ul class="nav-links" id="navLinks">
@@ -721,6 +748,7 @@
                 <li><a href="people.html"><span class="i18n"><span data-lang="en">People</span><span data-lang="zh">成员</span></span></a></li>
                 <li><a href="research.html"><span class="i18n"><span data-lang="en">Research</span><span data-lang="zh">研究</span></span></a></li>
                 <li><a href="publications.html" class="active"><span class="i18n"><span data-lang="en">Publications</span><span data-lang="zh">论文</span></span></a></li>
+                <li><a href="news.html"><span class="i18n"><span data-lang="en">News</span><span data-lang="zh">动态</span></span></a></li>
                 <li><a href="join.html"><span class="i18n"><span data-lang="en">Join Us</span><span data-lang="zh">加入我们</span></span></a></li>
             </ul>
 
@@ -823,7 +851,7 @@
             </div>
 
             <!-- ====== 论文 3 ====== -->
-            <div class="publication-item reveal reveal-delay-3" data-year="2024" data-research="suction-adhesion" data-keywords="suction-adhesion,gripping">
+            <div class="publication-item reveal reveal-delay-3" id="paper-pnas-2024" data-year="2024" data-research="suction-adhesion" data-keywords="suction-adhesion,gripping">
                 <div class="title">
                     <a href="https://doi.org/10.1073/pnas.2314359121" target="_blank" rel="noopener">
                         <span class="i18n"><span data-lang="en">Bioinspired Multiscale Adaptive Suction on Complex Dry Surfaces Enhanced by Regulated Water Secretion</span><span data-lang="zh">受调控水分泌增强的复杂干表面仿生多尺度自适应吸附</span></span>
@@ -1061,21 +1089,39 @@
             if (yearFilter) { yearFilter.addEventListener('change', applyFilters); }
             if (researchFilter) { researchFilter.addEventListener('change', applyFilters); }
             if (keywordFilter) { keywordFilter.addEventListener('change', applyFilters); }
-            // 读取 URL 参数 ?research=xxx 与 ?keyword=xxx，自动应用对应筛选（可同时生效）
+            // 读取 URL 参数 ?research=xxx 与 ?keyword=xxx，自动应用对应筛选（可同时生效），并为结果高亮闪烁
             (function() {
                 let params = null;
+                let hasParam = false;
                 try { params = new URLSearchParams(window.location.search); } catch (e) {}
                 if (params) {
                     const r = params.get('research');
                     if (researchFilter && r && ['suction-adhesion', 'humanoid-robotics', 'artificial-joints', 'artificial-muscles', 'joint-muscle-control'].indexOf(r) !== -1) {
                         researchFilter.value = r;
+                        hasParam = true;
                     }
                     const k = params.get('keyword');
                     if (keywordFilter && k && keywordFilter.querySelector('option[value="' + k + '"]')) {
                         keywordFilter.value = k;
+                        hasParam = true;
                     }
                 }
                 applyFilters();
+                // 带参数加载时，为被筛选出的（可见）论文添加高亮闪烁，动画 3 次后自动移除
+                if (hasParam) {
+                    setTimeout(function() {
+                        const flashed = [];
+                        document.querySelectorAll('.publication-item').forEach(function(item) {
+                            if (item.style.display !== 'none') {
+                                item.classList.add('highlight-flash');
+                                flashed.push(item);
+                            }
+                        });
+                        setTimeout(function() {
+                            flashed.forEach(function(item) { item.classList.remove('highlight-flash'); });
+                        }, 4700);
+                    }, 120);
+                }
             })();
 
             console.log('✅ BIRD Lab Publications 页面已加载。');
