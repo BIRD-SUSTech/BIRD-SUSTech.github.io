@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/logos/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="images/logos/favicon.png" />
     <title data-en="People · BIRD Lab" data-zh="成员 · BIRD Lab">People · BIRD Lab</title>
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -150,6 +152,13 @@
             color: var(--color-text);
             letter-spacing: -0.02em;
             white-space: nowrap;
+        }
+        .navbar-brand a.navbar-brand-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: inherit;
+            text-decoration: none;
         }
         .navbar-brand img.navbar-logo {
             height: 24px;
@@ -745,8 +754,10 @@
     <nav class="navbar" id="navbar" role="navigation" aria-label="主导航">
         <div class="container">
             <div class="navbar-brand">
-                <img src="images/logos/sustech-logo.png" alt="SUSTech" class="navbar-logo" />
-                <span class="logo-text">BIRD</span> Lab
+                <a href="index.html" class="navbar-brand-link" aria-label="BIRD Lab Home">
+                    <img src="images/logos/sustech-logo.png" alt="SUSTech" class="navbar-logo" />
+                    <span class="logo-text">BIRD</span> Lab
+                </a>
             </div>
 
             <ul class="nav-links" id="navLinks">
@@ -754,6 +765,7 @@
                 <li><a href="people.html" class="active"><span class="i18n"><span data-lang="en">People</span><span data-lang="zh">成员</span></span></a></li>
                 <li><a href="research.html"><span class="i18n"><span data-lang="en">Research</span><span data-lang="zh">研究</span></span></a></li>
                 <li><a href="publications.html"><span class="i18n"><span data-lang="en">Publications</span><span data-lang="zh">论文</span></span></a></li>
+                <li><a href="news.html"><span class="i18n"><span data-lang="en">News</span><span data-lang="zh">动态</span></span></a></li>
                 <li><a href="join.html"><span class="i18n"><span data-lang="en">Join Us</span><span data-lang="zh">加入我们</span></span></a></li>
             </ul>
 
@@ -783,11 +795,11 @@
             <div class="pi-grid">
                 <div class="pi-photo">
                     <div>
-                        <a href="https://faculty.sustech.edu.cn/yuetq/" target="_blank" rel="noopener" title="Tianqi Yue / 岳天奇 — Faculty Homepage">
+                        <a href="members/tianqi-yue.html" title="Tianqi Yue / 岳天奇">
                             <img src="images/people/tianqi-yue.jpeg" alt="Tianqi Yue / 岳天奇" />
                         </a>
                         <div class="pi-caption">
-                            <span class="i18n"><span data-lang="en">Click the photo to visit the faculty homepage</span><span data-lang="zh">点击照片访问学校官网主页</span></span>
+                            <span class="i18n"><span data-lang="en">Click the photo to visit the personal page</span><span data-lang="zh">点击照片访问个人主页</span></span>
                         </div>
                     </div>
                 </div>
@@ -807,9 +819,7 @@
                     <div class="pi-meta" style="margin-bottom: 20px; font-size: 0.95rem; color: var(--color-text-secondary);">
                         📧 <span class="i18n"><span data-lang="en">Email:</span><span data-lang="zh">邮箱：</span></span> <a href="mailto:yuetq@sustech.edu.cn" style="text-decoration: underline;">yuetq@sustech.edu.cn</a>
                     </div>
-                    <a href="https://faculty.sustech.edu.cn/yuetq/" class="btn" target="_blank" rel="noopener">
-                        <span class="i18n"><span data-lang="en">Faculty Page →</span><span data-lang="zh">学校教师主页 →</span></span>
-                    </a>
+
                 </div>
             </div>
         </div>
@@ -840,9 +850,9 @@
                         <div class="name">Chong Yang / 杨冲</div>
                     </a>
                 <a href="members/ye-guo.html" class="member-card reveal">
-                        <div class="avatar"><img src="images/people/ye-guo.jpg" alt="Ye Guo / 叶果" /></div>
+                        <div class="avatar"><img src="images/people/ye-guo.jpg" alt="Guo Ye / 叶果" /></div>
                         <div class="role"><span class="i18n"><span data-lang="en">Master Student</span><span data-lang="zh">硕士研究生</span></span></div>
-                        <div class="name">Ye Guo / 叶果</div>
+                        <div class="name">Guo Ye / 叶果</div>
                     </a>
                 <a href="members/you-qinghan.html" class="member-card reveal">
                         <div class="avatar"><img src="images/people/you-qinghan.jpeg" alt="Qinghan You / 有擎翰" /></div>
