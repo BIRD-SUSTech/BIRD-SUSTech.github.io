@@ -1,0 +1,584 @@
+{
+  "members": [
+    {
+      "slug": "tianqi-yue",
+      "name_en": "Tianqi Yue",
+      "name_zh": "岳天奇",
+      "role_en": "Principal Investigator (PI)",
+      "role_zh": "课题组组长 (PI)",
+      "group": "pi",
+      "photo": "tianqi-yue.jpeg",
+      "email": "yuetq@sustech.edu.cn",
+      "meta_label_en": "Department:",
+      "meta_label_zh": "院系：",
+      "meta_value_en": "School of System Design and Intelligent Manufacturing, SUSTech",
+      "meta_value_zh": "南方科技大学，自动化与智能制造学院",
+      "back_link": "../people.html#tianqi-yue",
+      "head_css": "        .faculty-btn {\n            display: inline-flex;\n            align-items: center;\n            gap: 6px;\n            margin-top: 16px;\n            padding: 10px 26px;\n            border-radius: 60px;\n            background: var(--color-primary);\n            color: #FFFFFF;\n            font-weight: 600;\n            font-size: 0.95rem;\n            font-family: var(--font);\n            transition: transform var(--transition), background var(--transition), box-shadow var(--transition);\n            text-decoration: none;\n        }\n        .faculty-btn:hover {\n            background: var(--color-primary-dark);\n            transform: scale(1.04);\n            box-shadow: 0 6px 20px rgba(232, 93, 4, 0.30);\n        }",
+      "profile_extra_html": "<a href=\"https://faculty.sustech.edu.cn/yuetq/\" class=\"faculty-btn\" target=\"_blank\" rel=\"noopener\"><span class=\"i18n\"><span data-lang=\"en\">Faculty Page →</span><span data-lang=\"zh\">学校教师主页 →</span></span></a>",
+      "bio_en": "I'm Tianqi Yue, an Associate Professor at the <a href=\"https://aim.sustech.edu.cn/\" target=\"_blank\" rel=\"noopener\">School of System Design and Intelligent Manufacturing</a>, <a href=\"https://www.sustech.edu.cn/\" target=\"_blank\" rel=\"noopener\">Southern University of Science and Technology (SUSTech)</a>, and the Principal Investigator of the Bioinspired Intelligent Robotic Design Lab (BIRD Lab).<br /><br />I received my Ph.D. from the University of Bristol and <a href=\"https://www.bristolroboticslab.com/\" target=\"_blank\" rel=\"noopener\">Bristol Robotics Laboratory</a>, supervised by <a href=\"https://research-information.bris.ac.uk/en/persons/jonathan-m-rossiter/\" target=\"_blank\" rel=\"noopener\">Prof. Jonathan Rossiter</a> and <a href=\"https://research-information.bris.ac.uk/en/persons/hermes-gadelha/\" target=\"_blank\" rel=\"noopener\">Dr. Hermes Gadelha</a>. During my Ph.D., I focused on the theory and technology of vacuum adhesion for bioinspired robots, leading several representative works: an octopus-inspired soft system with vacuum-based physical intelligence, a snail-inspired wall-climbing robot with sliding vacuum adhesion, and an octopus-inspired multi-scale adaptive vacuum gripper. This series of work has been published in journals including Science Robotics, Nature Communications, and PNAS, and has attracted international media attention and coverage from outlets such as the Associated Press, BBC, and Newton magazine.<br /><br />After joining SUSTech, I founded BIRD Lab. The lab currently focuses on three major directions: bio-inspired humanoid robot hardware design and anthropomorphic control, robotic vacuum adhesion technology, and soft robotic systems.<br /><br />The philosophy of BIRD Lab has always been consistent — drawing inspiration from nature, not only mimicking biological forms but also deeply understanding their underlying operational logic, and embedding that intelligence into the core of robotic systems, enabling flexible, safe, and natural human-robot interaction, and providing key technical support for next-generation robots to truly integrate into society.",
+      "bio_zh": "我是岳天奇，<a href=\"https://www.sustech.edu.cn/\" target=\"_blank\" rel=\"noopener\">南方科技大学（SUSTech）</a><a href=\"https://aim.sustech.edu.cn/\" target=\"_blank\" rel=\"noopener\">自动化与智能制造学院</a>的副教授、仿生智能机器人设计实验室（BIRD Lab）的课题组长。<br /><br />我博士毕业于布里斯托大学和<a href=\"https://www.bristolroboticslab.com/\" target=\"_blank\" rel=\"noopener\">布里斯托机器人实验室</a>，师从 <a href=\"https://research-information.bris.ac.uk/en/persons/jonathan-m-rossiter/\" target=\"_blank\" rel=\"noopener\">Jonathan Rossiter</a> 教授和 <a href=\"https://research-information.bris.ac.uk/en/persons/hermes-gadelha/\" target=\"_blank\" rel=\"noopener\">Hermes Gadelha</a> 博士。博士期间，我聚焦于仿生机器人真空吸附理论与技术的研究，主导完成了多项代表性工作：受章鱼启发的真空物理智能软体系统、受蜗牛启发的滑动真空吸附爬壁机器人、以及受章鱼启发的多尺度适应性真空吸附抓取器。系列成果发表于 Science Robotics、Nature Communications、PNAS 等期刊，并获得了包括美联社、BBC、Newton 杂志在内的多家国际媒体关注与报道。<br /><br />加入南方科技大学后，我成立了 BIRD Lab。实验室目前重点聚焦于三大方向：超仿生人形机器人的本体设计与拟人控制、机器人真空吸附技术、以及软体机器人系统。<br /><br />BIRD Lab 的理念始终如一——从自然中汲取灵感，不仅模仿生物的形态，更深入理解其本质运行逻辑，并将这种智能嵌入机器人系统的核心，让机器人与人类实现灵活、安全、自然的交互，为下一代机器人真正融入社会提供关键的技术支撑。",
+      "research_en": "Suction Adhesion, Humanoid Robotics, Soft Robotics.",
+      "research_zh": "真空吸附、仿生人形机器人、软体机器人。",
+      "education": [
+        {
+          "en": "2013 – 2017 · Dalian University of Technology · Mechanical Design, Manufacturing and Automation (B.Eng.)",
+          "zh": "2013~2017 · 大连理工大学 · 机械设计制造及自动化 · 工学学士"
+        },
+        {
+          "en": "2017 – 2019 · Harbin Institute of Technology · Mechatronic Engineering (M.Eng.)",
+          "zh": "2017~2019 · 哈尔滨工业大学 · 机械电子工程 · 工学硕士"
+        },
+        {
+          "en": "2019 – 2024 · University of Bristol · Engineering Mathematics (Ph.D.)",
+          "zh": "2019~2024 · 布里斯托大学 · 工程数学 · 哲学博士"
+        },
+        {
+          "en": "2024 – 2025 · University of Bristol · Postdoctoral Research Associate",
+          "zh": "2024~2025 · 布里斯托大学 · 博士后研究助理"
+        },
+        {
+          "en": "2025 – Present · Southern University of Science and Technology · Associate Professor",
+          "zh": "2025~今 · 南方科技大学 · 副教授"
+        }
+      ],
+      "publications": []
+    },
+    {
+      "slug": "gao-sen",
+      "name_en": "Sen Gao",
+      "name_zh": "高森",
+      "role_en": "Postdoctoral Fellow",
+      "role_zh": "博士后",
+      "group": "postdoc",
+      "photo": "gao-sen.jpg",
+      "email": "gaosen1113@163.com",
+      "meta_label_en": "Department:",
+      "meta_label_zh": "院系：",
+      "meta_value_en": "SUSTech",
+      "meta_value_zh": "南方科技大学",
+      "back_link": "../people.html",
+      "head_css": "",
+      "profile_extra_html": "",
+      "bio_en": "Hello, I am a postdoctoral researcher focusing on lubricating soft materials and biomimetic robotics. My research centers on the fabrication and tribological optimization of self-lubricating hydrogels, aiming to design high-performance low-friction soft actuators for bionic robotic manipulation.",
+      "bio_zh": "你好，我是一名博士后研究员，研究方向为润滑软材料与仿生机器人。我的研究聚焦于自润滑水凝胶的制备与摩擦学优化，旨在为仿生机器人操控设计高性能、低摩擦的软体执行器。",
+      "research_en": "Lubricating soft materials for biomimetic robotics.",
+      "research_zh": "仿生机器人用润滑软材料。",
+      "education": [
+        {
+          "en": "2014 – 2018 · Beihua University · Wood Science and Technology (B.Eng.)",
+          "zh": "2014~2018 · 北华大学 · 木材科学与技术 · 工学学士"
+        },
+        {
+          "en": "2019 – 2026 · Northeast Forestry University · Forestry Engineering (Ph.D.)",
+          "zh": "2019~2026 · 东北林业大学 · 林业工程 · 工学博士"
+        }
+      ],
+      "publications": [
+        {
+          "title_en": "\"Super Retarding-Flame Wood\"",
+          "title_zh": "《超阻燃木材》",
+          "venue": "Science Bulletin, 71(10), 2508-2517.",
+          "badge_en": "Pre-BIRD personal work",
+          "badge_zh": "加入课题组前个人成果"
+        }
+      ]
+    },
+    {
+      "slug": "mo-fei",
+      "name_en": "Fei Mo",
+      "name_zh": "莫菲",
+      "role_en": "PhD Student",
+      "role_zh": "博士研究生",
+      "group": "phd",
+      "photo": "mo-fei.jpeg",
+      "email": "murphymo621@gmail.com",
+      "meta_label_en": "Department:",
+      "meta_label_zh": "院系：",
+      "meta_value_en": "SUSTech",
+      "meta_value_zh": "南方科技大学",
+      "back_link": "../people.html",
+      "head_css": "",
+      "profile_extra_html": "",
+      "bio_en": "Hello, I am a PhD student focusing on soft robotics and bionic joints. My research centers on the design, fabrication and control of biomimetic shoulder structures, aiming to develop compliant, adaptive soft robotic systems for human-friendly actuation and rehabilitation applications.",
+      "bio_zh": "你好，我是一名博士生，研究方向为软体机器人与仿生关节。我的研究聚焦于仿生肩关节结构的设计、制备与控制，旨在开发顺应、自适应的软体机器人系统，用于友好的人机驱动与康复应用。",
+      "research_en": "Biomimetic shoulder joint; soft robotics and bionic joints.",
+      "research_zh": "仿生肩关节；软体机器人与仿生关节。",
+      "education": [
+        {
+          "en": "2017 – 2021 · Southeast University · Biomedical Engineering (B.Eng.)",
+          "zh": "2017~2021 · 东南大学 · 生物医学工程 · 工学学士"
+        },
+        {
+          "en": "2021 – 2025 · University of Chinese Academy of Sciences · Biomedical Engineering (M.Eng.)",
+          "zh": "2021~2025 · 中国科学院大学 · 生物医学工程 · 工学硕士"
+        }
+      ],
+      "publications": []
+    },
+    {
+      "slug": "zhu-xu",
+      "name_en": "Xu Zhu",
+      "name_zh": "朱旭",
+      "role_en": "PhD Student",
+      "role_zh": "博士研究生",
+      "group": "phd",
+      "photo": "zhu-xu.jpeg",
+      "email": "xu.zhu.sustech@gmail.com",
+      "meta_label_en": "Department:",
+      "meta_label_zh": "院系：",
+      "meta_value_en": "SUSTech",
+      "meta_value_zh": "南方科技大学",
+      "back_link": "../people.html",
+      "head_css": "",
+      "profile_extra_html": "",
+      "bio_en": "Hi, I'm a PhD student in BIRD Lab, SUSTech. I earned dual bachelor's degrees in Computer Science and Automation from Zhejiang University followed by a Master's degree in Robotics from the University of Bristol. Then I worked for two years as a prediction algorithm engineer at Horizon Robotics (a leading autonomous driving/robotics company in China). With a strong interest in intelligent robotics, my current research focuses on the hardware design and intelligent control of bio-inspired humanoid robots.",
+      "bio_zh": "你好，我是 BIRD Lab 的博士生。我本科毕业于浙江大学（计算机科学与技术、自动化双学位），硕士毕业于布里斯托大学机器人学专业，之后在地平线（中国领先的自动驾驶/机器人公司）担任了两年预测算法工程师。我对智能机器人有浓厚兴趣，目前的研究聚焦于仿生人形机器人的硬件设计与智能控制。",
+      "research_en": "Intelligent robotics; hardware design and intelligent control of bio-inspired humanoid robots.",
+      "research_zh": "智能机器人；仿生人形机器人的硬件设计与智能控制。",
+      "education": [
+        {
+          "en": "2016 – 2020 · Zhejiang University · Automation + Computer Science (dual B.Eng.)",
+          "zh": "2016-2020 · 浙江大学 · 自动化 + 计算机科学与技术（双学位）"
+        },
+        {
+          "en": "2021 – 2022 · University of Bristol · MSc Robotics",
+          "zh": "2021-2022 · 布里斯托大学 · 机器人学硕士"
+        },
+        {
+          "en": "2022 – 2024 · Horizon Robotics · Prediction Algorithm Engineer",
+          "zh": "2022-2024 · 地平线 · 自动驾驶预测算法工程师"
+        }
+      ],
+      "publications": []
+    },
+    {
+      "slug": "yang-chong",
+      "name_en": "Chong Yang",
+      "name_zh": "杨冲",
+      "role_en": "PhD Student",
+      "role_zh": "博士研究生",
+      "group": "phd",
+      "photo": "yang-chong.jpeg",
+      "email": "yangc2024@mail.sustech.edu.cn",
+      "meta_label_en": "Department:",
+      "meta_label_zh": "院系：",
+      "meta_value_en": "SUSTech",
+      "meta_value_zh": "南方科技大学",
+      "back_link": "../people.html",
+      "head_css": "",
+      "profile_extra_html": "",
+      "bio_en": "Hello, I am a PhD student focusing on soft robotics, with an emphasis on the design, fabrication, and application of novel artificial muscles. Previously involved in research on medical robots, now dedicated to exploring novel soft actuation technologies and advancing their applications in robotics and biomedical fields.",
+      "bio_zh": "你好，我是一名博士生，研究方向为软体机器人，重点研究新型人工肌肉的设计、制备与应用。此前曾参与医疗机器人研究，现致力于探索新型软体驱动技术，并推动其在机器人与生物医学领域的应用。",
+      "research_en": "Soft robotics; artificial muscles.",
+      "research_zh": "软体机器人；人工肌肉。",
+      "education": [
+        {
+          "en": "2017 – 2021 · Harbin Institute of Technology · Mechatronic Engineering (B.Eng.)",
+          "zh": "2017~2021 · 哈尔滨工业大学 · 机械电子工程 · 工学学士"
+        },
+        {
+          "en": "2021 – 2024 · Beijing General Research Institute of Mining and Metallurgy · Mechanical Design and Theory (M.Eng.)",
+          "zh": "2021~2024 · 北京矿冶研究总院 · 机械设计及理论 · 工学硕士"
+        }
+      ],
+      "publications": []
+    },
+    {
+      "slug": "ye-guo",
+      "name_en": "Guo Ye",
+      "name_zh": "叶果",
+      "role_en": "Master Student",
+      "role_zh": "硕士研究生",
+      "group": "master",
+      "photo": "ye-guo.jpg",
+      "email": "1033102551@qq.com",
+      "meta_label_en": "Department:",
+      "meta_label_zh": "院系：",
+      "meta_value_en": "Electronic Information, SUSTech",
+      "meta_value_zh": "南方科技大学，电子信息",
+      "back_link": "../people.html",
+      "head_css": "",
+      "profile_extra_html": "",
+      "bio_en": "Hello, my name is Guo Ye, and I am from Heyuan City, Guangdong Province, a beautiful mountain city. I am honored to start my master's research career at BIRD Lab and to become a versatile talent studying mechanics, electronics, and materials.",
+      "bio_zh": "你好，我是叶果，来自广东省河源市。我很荣幸在 BIRD Lab 开启硕士科研生涯，努力成为机电材多学科交叉的复合型人才。",
+      "research_en": "Sliding suction applied to smart vehicles and devices.",
+      "research_zh": "滑动吸附在智能小车等设备上的应用。",
+      "education": [
+        {
+          "en": "2021 – 2025 · Shenzhen Technology University · Vehicle Engineering (B.Eng.)",
+          "zh": "2021~2025 · 深圳技术大学 · 车辆工程 · 工学学士"
+        },
+        {
+          "en": "2025 – Present · Southern University of Science and Technology · Electronic Information (M.Eng. candidate)",
+          "zh": "2025~至今 · 南方科技大学 · 电子信息 · 在读硕士"
+        }
+      ],
+      "publications": []
+    },
+    {
+      "slug": "you-qinghan",
+      "name_en": "Qinghan You",
+      "name_zh": "有擎翰",
+      "role_en": "Master Student",
+      "role_zh": "硕士研究生",
+      "group": "master",
+      "photo": "you-qinghan.jpeg",
+      "email": "timelikedeepsea@qq.com",
+      "meta_label_en": "Department:",
+      "meta_label_zh": "院系：",
+      "meta_value_en": "Control Science and Engineering, SUSTech",
+      "meta_value_zh": "南方科技大学，控制科学与工程",
+      "back_link": "../people.html",
+      "head_css": "",
+      "profile_extra_html": "",
+      "bio_en": "Greetings, a master's student interested in robot control here.",
+      "bio_zh": "你好，我是一名对机器人控制感兴趣的硕士研究生。",
+      "research_en": "Control science and engineering; robot control.",
+      "research_zh": "控制科学与工程；机器人控制。",
+      "education": [
+        {
+          "en": "2022 – 2026 · University of Science and Technology Beijing · Mechanical Engineering (B.Eng.)",
+          "zh": "2022~2026 · 北京科技大学 · 机械工程 · 工学学士"
+        },
+        {
+          "en": "2026 – Now · Southern University of Science and Technology · Control Science and Engineering (M.Sc.)",
+          "zh": "2026~Now · 南方科技大学 · 控制科学与工程 · 工学硕士"
+        }
+      ],
+      "publications": []
+    },
+    {
+      "slug": "dong-ruilin",
+      "name_en": "Ruilin Dong",
+      "name_zh": "董瑞麟",
+      "role_en": "Master Student",
+      "role_zh": "硕士研究生",
+      "group": "master",
+      "photo": "dong-ruilin.jpeg",
+      "email": "794876983@qq.com",
+      "meta_label_en": "Department:",
+      "meta_label_zh": "院系：",
+      "meta_value_en": "Dept. of Mechanical and Energy Engineering, SUSTech",
+      "meta_value_zh": "南方科技大学，机械与能源工程系",
+      "back_link": "../people.html",
+      "head_css": "",
+      "profile_extra_html": "",
+      "bio_en": "Hi! I'm Ruilin, a master's student in Control Science and Engineering, admitted in September 2026. I completed my bachelor's degree in Mechanical Engineering at SUSTech and now continue my studies here. Anyway, it's a really nice place for academic collaboration and teamwork.",
+      "bio_zh": "你好！我是董瑞麟，控制科学与工程专业硕士研究生，2026年9月入学。我已在南科大完成机械工程本科学习，并继续在这里深造。这里是一个非常适合学术合作与团队协作的地方。",
+      "research_en": "Mechanical engineering; rehabilitation robotics.",
+      "research_zh": "机械工程；康复机器人。",
+      "education": [
+        {
+          "en": "2022 – 2026 · Southern University of Science and Technology · Mechanical Engineering (B.Eng.)",
+          "zh": "2022~2026 · 南方科技大学 · 机械工程 · 工学学士"
+        },
+        {
+          "en": "2026 – 2028 (expected) · Southern University of Science and Technology · Control Science and Engineering (M.Eng.)",
+          "zh": "2026~2028（预计） · 南方科技大学 · 控制科学与工程 · 工学硕士（在读）"
+        }
+      ],
+      "publications": [
+        {
+          "title_en": "\"Natural Movement-Based Pose Optimization for Robot-Guided Upper-Limb Rehabilitation System\"",
+          "title_zh": "《基于自然运动的机器人辅助上肢康复系统姿态优化》",
+          "venue": "IEEE Transactions on Medical Robotics and Bionics (Early Access)",
+          "badge_en": "Pre-BIRD personal work",
+          "badge_zh": "加入课题组前个人成果"
+        }
+      ]
+    },
+    {
+      "slug": "wang-shaoxiang",
+      "name_en": "Shaoxiang Wang",
+      "name_zh": "王绍襄",
+      "role_en": "Visiting Student",
+      "role_zh": "访问学生",
+      "group": "visiting",
+      "photo": "wang-shaoxiang.jpg",
+      "email": "chongxia2@gmail.com",
+      "meta_label_en": "Home Institution:",
+      "meta_label_zh": "所属院校：",
+      "meta_value_en": "University of Bristol · Engineering Mathematics",
+      "meta_value_zh": "布里斯托大学 · 工程数学",
+      "back_link": "../people.html",
+      "head_css": "",
+      "profile_extra_html": "",
+      "bio_en": "Hi there, I am a visiting PhD student. My research focuses on soft robotics and nonlinear mechanical systems, exploring how nonlinear material, structural, and fluidic dynamics can be harnessed to create adaptive robotic behaviors with reduced reliance on centralized control.",
+      "bio_zh": "你好！我是一名访问博士生。我的研究聚焦于软体机器人与非线性机械系统，探索如何利用材料、结构及流体中的非线性动力学，构建对集中式控制依赖更低的适应性机器人行为。",
+      "research_en": "Soft robotics and nonlinear dynamics.",
+      "research_zh": "软体机器人与非线性动力学。",
+      "education": [
+        {
+          "en": "2017 – 2021 · Northwest A&amp;F University · Mechanical Design, Manufacturing and Automation (B.Eng.)",
+          "zh": "2017~2021 · 西北农林科技大学 · 机械设计制造及其自动化 · 工学学士"
+        },
+        {
+          "en": "2021 – 2024 · Northwest A&amp;F University · Mechanical Engineering (M.Eng.)",
+          "zh": "2021~2024 · 西北农林科技大学 · 机械工程 · 工学硕士"
+        },
+        {
+          "en": "2024 – 2028 (expected) · University of Bristol · Engineering Mathematics (Ph.D.)",
+          "zh": "2024~2028（预计） · 布里斯托大学 · 工程数学 · 哲学博士（在读）"
+        }
+      ],
+      "publications": []
+    },
+    {
+      "slug": "lin-qijun",
+      "name_en": "Qijun Lin",
+      "name_zh": "林祺竣",
+      "role_en": "Undergraduate Student",
+      "role_zh": "本科生",
+      "group": "undergraduate",
+      "photo": "lin-qijun.jpeg",
+      "email": "12410814@sustech.mail.edu.cn",
+      "meta_label_en": "Department:",
+      "meta_label_zh": "院系：",
+      "meta_value_en": "Automation, SUSTech",
+      "meta_value_zh": "南方科技大学，自动化",
+      "back_link": "../people.html",
+      "head_css": "",
+      "profile_extra_html": "",
+      "bio_en": "I am an undergraduate student majoring in Automation at Southern University of Science and Technology. I am honored to join Professor Yue's research group for academic studies.",
+      "bio_zh": "我是南方科技大学自动化专业的本科生，很荣幸加入岳天奇教授课题组进行学术研究。",
+      "research_en": "Robotics and automation.",
+      "research_zh": "机器人与自动化。",
+      "education": [
+        {
+          "en": "2024 – Present · Southern University of Science and Technology · Automation (B.Eng. candidate)",
+          "zh": "2024~至今 · 南方科技大学 · 自动化 · 本科在读"
+        }
+      ],
+      "publications": []
+    },
+    {
+      "slug": "pang-yucheng",
+      "name_en": "Yucheng Pang",
+      "name_zh": "庞宇程",
+      "role_en": "Undergraduate Student",
+      "role_zh": "本科生",
+      "group": "undergraduate",
+      "photo": "pang-yucheng.jpeg",
+      "email": "12211025@mail.sustech.edu.cn",
+      "meta_label_en": "Department:",
+      "meta_label_zh": "院系：",
+      "meta_value_en": "Automation, SUSTech",
+      "meta_value_zh": "南方科技大学，自动化",
+      "back_link": "../people.html",
+      "head_css": "",
+      "profile_extra_html": "",
+      "bio_en": "Hello, my name is Pang Yucheng and I'm from Guilin, China. I am an undergraduate student majoring in Automation Engineering. I plan to further my education and contribute my efforts in the field of automation.",
+      "bio_zh": "你好，我是庞宇程，来自广西桂林，目前是自动化专业的本科生。我计划继续深造，在自动化领域贡献自己的力量。",
+      "research_en": "Automation engineering.",
+      "research_zh": "自动化工程。",
+      "education": [
+        {
+          "en": "2022 – 2026 · Southern University of Science and Technology · Automation",
+          "zh": "2022~2026 · 南方科技大学 · 自动化"
+        }
+      ],
+      "publications": []
+    },
+    {
+      "slug": "shui-yuyang",
+      "name_en": "Yuyang Shui",
+      "name_zh": "水玙阳",
+      "role_en": "Undergraduate Student",
+      "role_zh": "本科生",
+      "group": "undergraduate",
+      "photo": "shui-yuyang.jpeg",
+      "email": "12411114@mail.sustech.edu.cn",
+      "meta_label_en": "Department:",
+      "meta_label_zh": "院系：",
+      "meta_value_en": "Intelligent Manufacturing and Automation, SUSTech",
+      "meta_value_zh": "南方科技大学，智能制造与自动化",
+      "back_link": "../people.html",
+      "head_css": "",
+      "profile_extra_html": "",
+      "bio_en": "I'm Shui Yuyang, a 24th grade undergraduate student at Southern University of Science and Technology. I joined Professor Yue Tianqi's research group in 2025. I'm proficient in modular programming and 3D modeling. I'm currently devoting myself to the study of basic knowledge in the field of mechanical automation.",
+      "bio_zh": "我是水玙阳，南方科技大学24级本科生，2025年加入岳天奇教授课题组。我擅长模块化编程与三维建模，目前致力于机械自动化领域基础知识的学习。",
+      "research_en": "Mechanical automation; modular programming and 3D modeling.",
+      "research_zh": "机械自动化；模块化编程与三维建模。",
+      "education": [
+        {
+          "en": "2024 – Present · Southern University of Science and Technology · Intelligent Manufacturing and Automation",
+          "zh": "2024~今 · 南方科技大学 · 智能制造与自动化 · 本科"
+        }
+      ],
+      "publications": []
+    },
+    {
+      "slug": "zhang-jiantong",
+      "name_en": "Jiantong Zhang",
+      "name_zh": "张健通",
+      "role_en": "Undergraduate Student",
+      "role_zh": "本科生",
+      "group": "undergraduate",
+      "photo": "zhang-jiantong.jpeg",
+      "email": "12413111@mail.sustech.edu.cn",
+      "meta_label_en": "Department:",
+      "meta_label_zh": "院系：",
+      "meta_value_en": "Automation, SUSTech",
+      "meta_value_zh": "南方科技大学，自动化",
+      "back_link": "../people.html",
+      "head_css": "",
+      "profile_extra_html": "",
+      "bio_en": "My name is Zhang Jiantong. I am an undergraduate student majoring in Automation at Southern University of Science and Technology. I would like to explore new things across different fields. Currently, I am focusing on robot navigation systems.",
+      "bio_zh": "我是张健通，南方科技大学自动化专业本科生。我希望在多个领域探索新事物，目前专注于机器人导航系统的研究。",
+      "research_en": "Robot navigation systems.",
+      "research_zh": "机器人导航系统。",
+      "education": [
+        {
+          "en": "2024 – Present · Southern University of Science and Technology · Automation (B.Eng. candidate)",
+          "zh": "2024至今 · 南方科技大学 · 自动化 · 本科在读"
+        }
+      ],
+      "publications": []
+    },
+    {
+      "slug": "peiran-song",
+      "name_en": "Peiran Song",
+      "name_zh": "宋沛燃",
+      "role_en": "Undergraduate Student",
+      "role_zh": "本科生",
+      "group": "undergraduate",
+      "photo": "peiran-song.jpeg",
+      "email": "3338218287@qq.com",
+      "meta_label_en": "Major:",
+      "meta_label_zh": "专业：",
+      "meta_value_en": "Robotics Engineering, SUSTech",
+      "meta_value_zh": "南方科技大学，机器人工程",
+      "back_link": "../people.html",
+      "head_css": "",
+      "profile_extra_html": "",
+      "bio_en": "I'm Peiran Song, from Shenyang, Liaoning. I am currently an undergraduate student in Robotics Engineering at SUSTech, and I expect to continue my master's studies in this group starting from September 2027. I have a strong interest in robot design and manufacturing, and I am devoted to structural innovation and practical design for robots.",
+      "bio_zh": "我是宋沛燃，来自辽宁沈阳，目前本科就读于南科大机器人工程专业，并预计自2027年9月起在本课题组继续攻读硕士学位。我对机器人设计制造具有浓厚兴趣，致力于机器人结构创新与实用化设计。",
+      "research_en": "Artificial muscles; bioinspired robotics.",
+      "research_zh": "人工肌肉；仿生机器人。",
+      "education": [
+        {
+          "en": "2023 – 2027 · Southern University of Science and Technology · Robotics Engineering (B.Eng., in progress)",
+          "zh": "2023~2027 · 南方科技大学 · 机器人工程 · 工学学士（在读）"
+        },
+        {
+          "en": "2027 – 2029 (expected) · Southern University of Science and Technology · Control Science and Engineering (M.Eng.)",
+          "zh": "2027~2029（预计） · 南方科技大学 · 控制科学与工程 · 工学硕士"
+        }
+      ],
+      "publications": []
+    },
+    {
+      "slug": "jiajun-zhang",
+      "name_en": "Jiajun Zhang",
+      "name_zh": "张家骏",
+      "role_en": "Undergraduate Student",
+      "role_zh": "本科生",
+      "group": "undergraduate",
+      "photo": "jiajun-zhang.jpeg",
+      "email": "12410513@mail.sustech.edu.cn",
+      "meta_label_en": "Major:",
+      "meta_label_zh": "专业：",
+      "meta_value_en": "Automation, SUSTech",
+      "meta_value_zh": "南方科技大学，自动化",
+      "back_link": "../people.html",
+      "head_css": "",
+      "profile_extra_html": "",
+      "bio_en": "I'm Jiajun Zhang, an undergraduate student majoring in Automation at the Southern University of Science and Technology. My interests lie at the intersection of robotics, control theory, and applied computer vision. I would like to explore new things across different fields.",
+      "bio_zh": "我是张家骏，南方科技大学自动化专业本科生。我的兴趣集中在机器人、控制理论与应用计算机视觉的交叉领域，也乐于在不同学科中探索新事物。",
+      "research_en": "Robotics &amp; control systems; embedded systems &amp; hardware-software co-design.",
+      "research_zh": "机器人与控制系统；嵌入式系统与软硬件协同设计。",
+      "education": [
+        {
+          "en": "2024 – Present · Southern University of Science and Technology · Automation",
+          "zh": "2024~今 · 南方科技大学 · 自动化"
+        }
+      ],
+      "publications": []
+    },
+    {
+      "slug": "chenao-mei",
+      "name_en": "Chenao Mei",
+      "name_zh": "梅琛奥",
+      "role_en": "Undergraduate Student",
+      "role_zh": "本科生",
+      "group": "undergraduate",
+      "photo": "chenao-mei.jpeg",
+      "email": "12511705@mail.sustech.edu.cn",
+      "meta_label_en": "Major:",
+      "meta_label_zh": "专业：",
+      "meta_value_en": "Automation, SUSTech",
+      "meta_value_zh": "南方科技大学，自动化",
+      "back_link": "../people.html",
+      "head_css": "",
+      "profile_extra_html": "",
+      "bio_en": "I am an undergraduate student (Class of 2025) majoring in Automation at SUSTech. I am honored to join Professor Yue's research group for academic studies.",
+      "bio_zh": "我是南方科技大学自动化专业 2025 级本科生，十分荣幸加入岳教授的研究团队开展学术学习。",
+      "research_en": "Soft robotics; soft actuators; mechanical design.",
+      "research_zh": "软体机器人；软体驱动器；机械设计。",
+      "education": [
+        {
+          "en": "2025 – Present · Southern University of Science and Technology · Automation (B.Eng.)",
+          "zh": "2025~今 · 南方科技大学 · 自动化 · 工学学士（在读）"
+        }
+      ],
+      "publications": []
+    },
+    {
+      "slug": "jinyi-mo",
+      "name_en": "Jinyi Mo",
+      "name_zh": "莫瑾仪",
+      "role_en": "Undergraduate Student",
+      "role_zh": "本科生",
+      "group": "undergraduate",
+      "photo": "jinyi-mo.jpeg",
+      "email": "12510144@sustech.edu.cn",
+      "meta_label_en": "Major:",
+      "meta_label_zh": "专业：",
+      "meta_value_en": "Automation, SUSTech",
+      "meta_value_zh": "南方科技大学，自动化",
+      "back_link": "../people.html",
+      "head_css": "",
+      "profile_extra_html": "",
+      "bio_en": "I'm Jinyi Mo, an undergraduate student majoring in Automation at SUSTech. I am honored to join Professor Yue's research group, and I look forward to academic study and research projects within the group.",
+      "bio_zh": "我叫莫瑾仪，是南方科技大学自动化专业的本科生，十分荣幸加入岳教授的研究团队，期待能在课题组内开展学术学习、参与科研项目。",
+      "research_en": "Robotics and automation.",
+      "research_zh": "机器人与自动化。",
+      "education": [
+        {
+          "en": "2025 – 2029 (expected) · Southern University of Science and Technology · Automation (B.Eng., in progress)",
+          "zh": "2025~2029（预计） · 南方科技大学 · 自动化 · 本科在读"
+        }
+      ],
+      "publications": []
+    },
+    {
+      "slug": "li-minyi",
+      "name_en": "Minyi Li",
+      "name_zh": "李敏怡",
+      "role_en": "Lab Administrator",
+      "role_zh": "行政人员",
+      "group": "admin",
+      "photo": "li-minyi.jpeg",
+      "email": "limy3@mail.sustech.edu.cn",
+      "meta_label_en": "Department:",
+      "meta_label_zh": "院系：",
+      "meta_value_en": "SUSTech",
+      "meta_value_zh": "南方科技大学",
+      "back_link": "../people.html",
+      "head_css": "",
+      "profile_extra_html": "",
+      "bio_en": "I am Li Minyi, and I have been working at Southern University of Science and Technology for six years. My main responsibilities include administration, personnel management, procurement, reimbursement, and project management.",
+      "bio_zh": "我是李敏怡，已在南方科技大学工作六年。我的主要职责包括行政管理、人事管理、采购、报销与项目管理。",
+      "research_en": "Administration and laboratory management.",
+      "research_zh": "行政管理与实验室管理。",
+      "education": [
+        {
+          "en": "2013 – 2017 · University of Electronic Science and Technology of China, Zhongshan Institute · Convention and Exhibition Economics and Management (B.A.)",
+          "zh": "2013~2017 · 电子科技大学中山学院 · 会展经济与管理 · 管理学学士"
+        }
+      ],
+      "publications": []
+    }
+  ]
+}

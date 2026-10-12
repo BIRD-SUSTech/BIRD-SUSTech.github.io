@@ -1,0 +1,356 @@
+{
+  "empty_note": {
+    "en": "No publications match the selected filters.",
+    "zh": "没有符合所选筛选条件的论文。"
+  },
+  "items": [
+    {
+      "id": "paper-science-robotics-2025",
+      "year": "2025",
+      "research": "suction-adhesion",
+      "keywords": [
+        "suction-adhesion",
+        "soft-robotics",
+        "physical-intelligence"
+      ],
+      "reveal_delay": 1,
+      "url": "https://doi.org/10.1126/scirobotics.adr4264",
+      "title_en": "Embodying Soft Robots with Octopus-Inspired Hierarchical Suction Intelligence",
+      "title_zh": "具身软体机器人的章鱼启发层级吸盘智能",
+      "authors_html": "<a href=\"people.html#tianqi-yue\">Tianqi Yue</a>, Chenghua Lu, Kailuan Tang, Qiukai Qi, Z. Lu, L. Y. Lee, H. Bloomfield-Gadêlha, &amp; J. Rossiter*",
+      "venue": "Science Robotics, 10(102), eadr4264, 2025.",
+      "tags": [
+        {
+          "slug": "suction-adhesion",
+          "en": "Suction Adhesion",
+          "zh": "真空吸附"
+        },
+        {
+          "slug": "soft-robotics",
+          "en": "Soft Robotics",
+          "zh": "软体机器人"
+        },
+        {
+          "slug": "physical-intelligence",
+          "en": "Physical Intelligence",
+          "zh": "物理智能"
+        }
+      ]
+    },
+    {
+      "id": "paper-nature-comm-2024",
+      "year": "2024",
+      "research": "suction-adhesion",
+      "keywords": [
+        "suction-adhesion",
+        "climbing"
+      ],
+      "reveal_delay": 2,
+      "url": "https://doi.org/10.1038/s41467-024-48293-2",
+      "title_en": "Snail-Inspired Water-Enhanced Soft Sliding Suction for Climbing Robots",
+      "title_zh": "受蜗牛启发的水增强软体滑动吸附爬壁机器人",
+      "authors_html": "<a href=\"people.html#tianqi-yue\">Tianqi Yue</a>, H. Bloomfield-Gadêlha, &amp; J. Rossiter*",
+      "venue": "Nature Communications, 15(1), 4038, 2024.",
+      "tags": [
+        {
+          "slug": "suction-adhesion",
+          "en": "Suction Adhesion",
+          "zh": "真空吸附"
+        },
+        {
+          "slug": "climbing",
+          "en": "Climbing",
+          "zh": "爬壁"
+        }
+      ]
+    },
+    {
+      "id": "paper-pnas-2024",
+      "year": "2024",
+      "research": "suction-adhesion",
+      "keywords": [
+        "suction-adhesion",
+        "gripping"
+      ],
+      "reveal_delay": 3,
+      "url": "https://doi.org/10.1073/pnas.2314359121",
+      "title_en": "Bioinspired Multiscale Adaptive Suction on Complex Dry Surfaces Enhanced by Regulated Water Secretion",
+      "title_zh": "受调控水分泌增强的复杂干表面仿生多尺度自适应吸附",
+      "authors_html": "<a href=\"people.html#tianqi-yue\">Tianqi Yue</a>, W. Si, A. Keller, C. Yang, H. Bloomfield-Gadêlha, &amp; J. Rossiter*",
+      "venue": "Proceedings of the National Academy of Sciences, 121(16), e2314359121, 2024.",
+      "tags": [
+        {
+          "slug": "suction-adhesion",
+          "en": "Suction Adhesion",
+          "zh": "真空吸附"
+        },
+        {
+          "slug": "gripping",
+          "en": "Gripping",
+          "zh": "抓取"
+        }
+      ]
+    },
+    {
+      "id": "",
+      "year": "2024",
+      "research": "general",
+      "keywords": [
+        "soft-robotics",
+        "gripping",
+        "variable-stiffness"
+      ],
+      "reveal_delay": 4,
+      "url": "https://scholar.google.com/scholar?q=A%20Phase-Change%20Emulsion%20Jamming%20Gripper%20for%20Manipulation%20of%20Micro-Scale%20Textured%20Surfaces",
+      "title_en": "A Phase-Change Emulsion Jamming Gripper for Manipulation of Micro-Scale Textured Surfaces",
+      "title_zh": "用于微尺度纹理表面操控的相变乳液夹持器",
+      "authors_html": "A. Keller, <a href=\"people.html#tianqi-yue\">Tianqi Yue*</a>, Qiukai Qi, A. T. Conn, &amp; J. Rossiter",
+      "venue": "IEEE International Conference on Robotics and Automation (ICRA), pp. 706-712, 2024.",
+      "tags": [
+        {
+          "slug": "soft-robotics",
+          "en": "Soft Robotics",
+          "zh": "软体机器人"
+        },
+        {
+          "slug": "gripping",
+          "en": "Gripping",
+          "zh": "抓取"
+        },
+        {
+          "slug": "variable-stiffness",
+          "en": "Variable Stiffness",
+          "zh": "变刚度"
+        }
+      ]
+    },
+    {
+      "id": "",
+      "year": "2023",
+      "research": "suction-adhesion",
+      "keywords": [
+        "suction-adhesion",
+        "gripping"
+      ],
+      "reveal_delay": 5,
+      "url": "https://scholar.google.com/scholar?q=Shape-Conformable%20Suction%20Cups%20with%20Controllable%20Adaptive%20Suction%20on%20Complex%20Surfaces",
+      "title_en": "Shape-Conformable Suction Cups with Controllable Adaptive Suction on Complex Surfaces",
+      "title_zh": "复杂表面上具有可控自适应吸附的形状贴合吸盘",
+      "authors_html": "<a href=\"people.html#tianqi-yue\">Tianqi Yue*</a>, H. Bloomfield-Gadêlha, &amp; J. M. Rossiter",
+      "venue": "IEEE Robotics and Automation Letters, 8(11), 7735-7742, 2023.",
+      "tags": [
+        {
+          "slug": "suction-adhesion",
+          "en": "Suction Adhesion",
+          "zh": "真空吸附"
+        },
+        {
+          "slug": "gripping",
+          "en": "Gripping",
+          "zh": "抓取"
+        }
+      ]
+    },
+    {
+      "id": "",
+      "year": "2023",
+      "research": "general",
+      "keywords": [
+        "soft-robotics",
+        "variable-stiffness"
+      ],
+      "reveal_delay": 6,
+      "url": "https://scholar.google.com/scholar?q=A%20Silicone-sponge-based%20Variable-stiffness%20Device",
+      "title_en": "A Silicone-Sponge-Based Variable-Stiffness Device",
+      "title_zh": "基于硅胶海绵的可变刚度装置",
+      "authors_html": "<a href=\"people.html#tianqi-yue\">Tianqi Yue*</a>, T. L. You, H. Philamore, H. Bloomfield-Gadêlha, &amp; J. M. Rossiter",
+      "venue": "IEEE International Conference on Robotics and Automation (ICRA), pp. 627-633, 2023.",
+      "tags": [
+        {
+          "slug": "soft-robotics",
+          "en": "Soft Robotics",
+          "zh": "软体机器人"
+        },
+        {
+          "slug": "variable-stiffness",
+          "en": "Variable Stiffness",
+          "zh": "变刚度"
+        }
+      ]
+    },
+    {
+      "id": "",
+      "year": "2023",
+      "research": "suction-adhesion",
+      "keywords": [
+        "suction-adhesion",
+        "soft-robotics"
+      ],
+      "reveal_delay": 7,
+      "url": "https://scholar.google.com/scholar?q=Hydrogel-actuated%20Soft%20Sucker%20with%20Mucus%20Secretion",
+      "title_en": "Hydrogel-Actuated Soft Sucker with Mucus Secretion",
+      "title_zh": "具有黏液分泌功能的水凝胶驱动软体吸盘",
+      "authors_html": "<a href=\"people.html#tianqi-yue\">Tianqi Yue*</a>, A. Keller, D. Gosden, H. Bloomfield-Gadêlha, &amp; J. Rossiter",
+      "venue": "IEEE International Conference on Soft Robotics (RoboSoft), pp. 1-6, 2023.",
+      "tags": [
+        {
+          "slug": "suction-adhesion",
+          "en": "Suction Adhesion",
+          "zh": "真空吸附"
+        },
+        {
+          "slug": "soft-robotics",
+          "en": "Soft Robotics",
+          "zh": "软体机器人"
+        }
+      ]
+    },
+    {
+      "id": "",
+      "year": "2022",
+      "research": "suction-adhesion",
+      "keywords": [
+        "suction-adhesion",
+        "soft-robotics"
+      ],
+      "reveal_delay": 8,
+      "url": "https://scholar.google.com/scholar?q=A%20Contact-triggered%20Adaptive%20Soft%20Suction%20Cup",
+      "title_en": "A Contact-Triggered Adaptive Soft Suction Cup",
+      "title_zh": "接触触发的自适应软体吸盘",
+      "authors_html": "<a href=\"people.html#tianqi-yue\">Tianqi Yue*</a>, W. Si, A. J. Partridge, C. Yang, A. T. Conn, H. Bloomfield-Gadêlha, &amp; J. M. Rossiter",
+      "venue": "IEEE Robotics and Automation Letters, 7(2), 3600-3607, 2022. (With ICRA 2022 oral presentation)",
+      "tags": [
+        {
+          "slug": "suction-adhesion",
+          "en": "Suction Adhesion",
+          "zh": "真空吸附"
+        },
+        {
+          "slug": "soft-robotics",
+          "en": "Soft Robotics",
+          "zh": "软体机器人"
+        }
+      ]
+    },
+    {
+      "id": "",
+      "year": "2021",
+      "research": "general",
+      "keywords": [
+        "soft-robotics"
+      ],
+      "reveal_delay": 9,
+      "url": "https://scholar.google.com/scholar?q=Friction-driven%20three-foot%20robot%20inspired%20by%20snail%20movement",
+      "title_en": "Friction-Driven Three-Foot Robot Inspired by Snail Movement",
+      "title_zh": "受蜗牛运动启发的摩擦驱动三足机器人",
+      "authors_html": "<a href=\"people.html#tianqi-yue\">Tianqi Yue*</a>, H. Bloomfield-Gadêlha, &amp; J. Rossiter",
+      "venue": "IEEE International Conference on Robotics and Automation (ICRA), pp. 9820-9825, 2021.",
+      "tags": [
+        {
+          "slug": "soft-robotics",
+          "en": "Soft Robotics",
+          "zh": "软体机器人"
+        }
+      ]
+    }
+  ],
+  "research_options": [
+    {
+      "slug": "suction-adhesion",
+      "en": "Suction Adhesion",
+      "zh": "真空吸附"
+    },
+    {
+      "slug": "humanoid-robotics",
+      "en": "Humanoid Robotics",
+      "zh": "仿生人形机器人"
+    },
+    {
+      "slug": "artificial-joints",
+      "en": "Artificial Joints",
+      "zh": "人工关节"
+    },
+    {
+      "slug": "artificial-muscles",
+      "en": "Artificial Muscles",
+      "zh": "人工肌肉"
+    },
+    {
+      "slug": "joint-muscle-control",
+      "en": "Control of Joint-Muscle Complex",
+      "zh": "关节肌肉复合体的控制"
+    }
+  ],
+  "keyword_options": [
+    {
+      "slug": "actuation",
+      "en": "Actuation",
+      "zh": "驱动"
+    },
+    {
+      "slug": "bio-inspired-control",
+      "en": "Bio-inspired Control",
+      "zh": "生物启发控制"
+    },
+    {
+      "slug": "climbing",
+      "en": "Climbing",
+      "zh": "爬壁"
+    },
+    {
+      "slug": "cooperative-control",
+      "en": "Cooperative Control",
+      "zh": "协同控制"
+    },
+    {
+      "slug": "gripping",
+      "en": "Gripping",
+      "zh": "抓取"
+    },
+    {
+      "slug": "humanoid-robotics",
+      "en": "Humanoid Robotics",
+      "zh": "人形机器人"
+    },
+    {
+      "slug": "multi-dof",
+      "en": "Multi-DOF",
+      "zh": "多自由度"
+    },
+    {
+      "slug": "physical-intelligence",
+      "en": "Physical Intelligence",
+      "zh": "物理智能"
+    },
+    {
+      "slug": "rigid-flexible-coupling",
+      "en": "Rigid-Flexible Coupling",
+      "zh": "刚柔耦合"
+    },
+    {
+      "slug": "soft-robotics",
+      "en": "Soft Robotics",
+      "zh": "软体机器人"
+    },
+    {
+      "slug": "suction-adhesion",
+      "en": "Suction Adhesion",
+      "zh": "真空吸附"
+    },
+    {
+      "slug": "superlubrication",
+      "en": "Superlubrication",
+      "zh": "超润滑"
+    },
+    {
+      "slug": "transmission",
+      "en": "Transmission",
+      "zh": "传动"
+    },
+    {
+      "slug": "variable-stiffness",
+      "en": "Variable Stiffness",
+      "zh": "变刚度"
+    }
+  ]
+}
