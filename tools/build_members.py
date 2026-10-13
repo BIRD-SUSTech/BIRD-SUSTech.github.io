@@ -18,57 +18,14 @@ import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from chrome import footer, navbar, qr_modal  # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data" / "members.json"
 PEOPLE = ROOT / "people.html"
 
 GROUP_ORDER = ["postdoc", "phd", "master", "visiting", "undergraduate", "admin"]
-
-NAVBAR = """    <nav class="navbar" id="navbar" role="navigation" aria-label="主导航">
-        <div class="container">
-            <div class="navbar-brand"><a href="../index.html" class="navbar-brand-link" aria-label="BIRD Lab Home"><img src="../images/logos/sustech-logo.png" alt="SUSTech" class="navbar-logo" /><span class="logo-text">BIRD</span> Lab</a></div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="../index.html"><span class="i18n"><span data-lang="en">Home</span><span data-lang="zh">首页</span></span></a></li>
-                <li><a href="../people.html" class="active"><span class="i18n"><span data-lang="en">People</span><span data-lang="zh">成员</span></span></a></li>
-                <li><a href="../research.html"><span class="i18n"><span data-lang="en">Research</span><span data-lang="zh">研究</span></span></a></li>
-                <li><a href="../publications.html"><span class="i18n"><span data-lang="en">Publications</span><span data-lang="zh">论文</span></span></a></li>
-                <li><a href="../news.html"><span class="i18n"><span data-lang="en">News</span><span data-lang="zh">动态</span></span></a></li>
-                <li><a href="../join.html"><span class="i18n"><span data-lang="en">Join Us</span><span data-lang="zh">加入我们</span></span></a></li>
-            </ul>
-            <button class="lang-toggle" id="langToggle" aria-label="Switch language / 切换语言"><span class="i18n"><span data-lang="en">中文</span><span data-lang="zh">EN</span></span></button>
-            <button class="hamburger" id="hamburger" aria-label="切换菜单" aria-expanded="false"><span></span><span></span><span></span></button>
-        </div>
-    </nav>"""
-
-FOOTER = """    <footer class="footer">
-        <div class="container">
-            <div class="footer-top">
-                <div class="footer-brand"><img src="../images/logos/birdlab-logo.png" alt="BIRD Lab" class="footer-logo" /><small>SUSTech</small></div>
-                <div class="footer-links">
-                    <a href="../index.html"><span class="i18n"><span data-lang="en">Home</span><span data-lang="zh">首页</span></span></a>
-                    <a href="../people.html"><span class="i18n"><span data-lang="en">People</span><span data-lang="zh">成员</span></span></a>
-                    <a href="../research.html"><span class="i18n"><span data-lang="en">Research</span><span data-lang="zh">研究</span></span></a>
-                    <a href="../publications.html"><span class="i18n"><span data-lang="en">Publications</span><span data-lang="zh">论文</span></span></a>
-                    <a href="../news.html"><span class="i18n"><span data-lang="en">News</span><span data-lang="zh">动态</span></span></a>
-                    <a href="../join.html"><span class="i18n"><span data-lang="en">Join Us</span><span data-lang="zh">加入我们</span></span></a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <span>&copy; 2026 BIRD Lab, SUSTech. All rights reserved.</span>
-                <div class="social">
-                    <a href="#" id="qrLink" class="social-link"><span class="i18n"><span data-lang="en">Xiaohongshu</span><span data-lang="zh">小红书</span></span></a>
-                    <a href="mailto:yuetq@sustech.edu.cn" class="social-link"><span class="i18n"><span data-lang="en">Email</span><span data-lang="zh">邮箱</span></span></a>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- ===== 小红书二维码模态框 ===== -->
-    <div class="qr-modal" id="qrModal">
-        <div class="qr-modal-content">
-            <img src="../images/social/xiaohongshu.jpg" alt="Xiaohongshu QR Code / 小红书二维码" />
-        </div>
-    </div>"""
-
 
 def write_lf(path, text):
     """以 LF 换行写文件（Windows 下 text mode 会写成 CRLF，故显式指定）。"""
@@ -77,6 +34,11 @@ def write_lf(path, text):
 
 def i18n(en, zh):
     return f'<span class="i18n"><span data-lang="en">{en}</span><span data-lang="zh">{zh}</span></span>'
+
+
+def esc_url(url):
+    """URL 放进 HTML 属性/文本前转义 & 等字符。"""
+    return url.replace("&", "&amp;")
 
 
 def section(icon, title_en, title_zh, body):
@@ -110,7 +72,7 @@ def build_page(m):
     if m.get("head_css"):
         parts.append(f"    <style>\n{m['head_css']}\n    </style>")
     parts.append("</head>\n<body>\n")
-    parts.append(NAVBAR)
+    parts.append(navbar("people", "../"))
     parts.append(f"""
     <div class="breadcrumb">
         <div class="container">
@@ -161,8 +123,8 @@ def build_page(m):
             </ul>"""))
         parts.append("")
 
-    # 论文发表
-    if m.get("publications"):
+    # 论文发表（可含 Google Scholar 链接）
+    if m.get("publications") or m.get("scholar_url"):
         items = []
         for p in m["publications"]:
             badge = ""
@@ -175,10 +137,17 @@ def build_page(m):
                 </div>
                 <div class="pub-venue">{p['venue']}</div>
             </div>""")
+        if m.get("scholar_url"):
+            url = esc_url(m["scholar_url"])
+            items.append(f"""            <div class="pub-item">
+                <div class="pub-title">Google Scholar: <a href="{url}" target="_blank" rel="noopener">{url}</a></div>
+            </div>""")
         parts.append(section("📄", "Publications", "论文发表", "\n".join(items)))
         parts.append("")
 
-    parts.append(FOOTER)
+    parts.append(footer("../"))
+    parts.append("")
+    parts.append(qr_modal("../"))
     parts.append("""
 
     <script src="member-script.js"></script>

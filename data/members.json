@@ -289,6 +289,43 @@
       ]
     },
     {
+      "slug": "zhiping-chai",
+      "name_en": "Zhiping Chai",
+      "name_zh": "柴治平",
+      "role_en": "Visiting Scholar",
+      "role_zh": "访问学者",
+      "group": "visiting",
+      "photo": "zhiping-chai.jpeg",
+      "email": "zhipingchai@hust.edu.cn",
+      "meta_label_en": "Home Institution:",
+      "meta_label_zh": "所属院校：",
+      "meta_value_en": "Huazhong University of Science and Technology (HUST)",
+      "meta_value_zh": "华中科技大学",
+      "back_link": "../people.html",
+      "head_css": "",
+      "profile_extra_html": "",
+      "bio_en": "I am a visiting scholar at SUSTech. By integrating physics-based simulation, data-driven modeling, and generative architectures, my research interest bridges the gap between computational intelligence and real-world physical systems.",
+      "bio_zh": "我是南方科技大学的访问学者。我的研究融合基于物理的仿真、数据驱动建模与生成式架构，致力于弥合计算智能与真实物理系统之间的鸿沟。",
+      "research_en": "AI for Science and Data-Driven Physical Modeling; Embodied Intelligence for Flexible-Rigid Coupled Robotic Systems; Multimodal Perception and Intelligent Robotic Manipulation.",
+      "research_zh": "科学智能与数据驱动的物理建模；刚柔耦合机器人系统的具身智能；多模态感知与智能机器人操作。",
+      "education": [
+        {
+          "en": "2015 – 2019 · Dalian University of Technology · Bachelor's Degree",
+          "zh": "2015~2019 · 大连理工大学 · 本科（学士）"
+        },
+        {
+          "en": "2019 – 2021 · Huazhong University of Science and Technology · Master's Degree",
+          "zh": "2019~2021 · 华中科技大学 · 硕士研究生"
+        },
+        {
+          "en": "2021 – 2026 · Huazhong University of Science and Technology · Doctoral Degree",
+          "zh": "2021~2026 · 华中科技大学 · 博士研究生"
+        }
+      ],
+      "publications": [],
+      "scholar_url": "https://scholar.google.com/citations?user=74VjAf0AAAAJ&hl=zh-CN"
+    },
+    {
       "slug": "wang-shaoxiang",
       "name_en": "Shaoxiang Wang",
       "name_zh": "王绍襄",
@@ -579,6 +616,34 @@
         }
       ],
       "publications": []
+    },
+    {
+      "slug": "xiangnan-hu",
+      "name_en": "Xiangnan Hu",
+      "name_zh": "胡相南",
+      "role_en": "Undergraduate Student",
+      "role_zh": "本科生",
+      "group": "undergraduate",
+      "photo": "xiangnan-hu.jpeg",
+      "email": "12510438@mail.sustech.edu.cn",
+      "meta_label_en": "Major:",
+      "meta_label_zh": "专业：",
+      "meta_value_en": "Automation, SUSTech",
+      "meta_value_zh": "南方科技大学，自动化",
+      "bio_en": "Hi, I'm Xiangnan Hu, an Automation undergraduate student at Southern University of Science and Technology (SUSTech). I'm passionate about robotics and aim to become a full-stack robotics engineer. Currently, I'm continuously learning and improving my skills across robotics, software, and hardware development. Any feedback or guidance is greatly appreciated!",
+      "bio_zh": "大家好，我是胡相南，南方科技大学自动化专业本科生。我热爱机器人，希望成为一名全栈机器人工程师，目前正在机器人、软件与硬件开发方面持续学习与提升，欢迎任何反馈与指导！",
+      "research_en": "Embodied Intelligence; Bio-inspired Robotics; Adaptive Robot Control.",
+      "research_zh": "具身智能；仿生机器人；自适应机器人控制。",
+      "education": [
+        {
+          "en": "2025 – Present · Southern University of Science and Technology · Automation (B.Eng.)",
+          "zh": "2025~今 · 南方科技大学 · 自动化 · 工学学士（在读）"
+        }
+      ],
+      "publications": [],
+      "back_link": "../people.html",
+      "head_css": "",
+      "profile_extra_html": ""
     }
   ]
 }
