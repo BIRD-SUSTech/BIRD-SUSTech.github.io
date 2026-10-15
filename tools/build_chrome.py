@@ -13,6 +13,10 @@ import re
 import sys
 from pathlib import Path
 
+import sys as _sys
+if hasattr(_sys.stdout, "reconfigure"):
+    _sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import chrome  # noqa: E402
 

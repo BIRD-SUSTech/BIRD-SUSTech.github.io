@@ -21,16 +21,29 @@
 
 ---
 
-## 0.5 两个时点都要同步 main（很重要）
+## 0.5 最终工作流（两条命令）
 
-| 时点 | 命令 | 为什么 |
+| 时点 | 命令 | 说明 |
 |---|---|---|
-| **开工前** | `bash tools/sync.sh` | 让改动基于 main 最新；否则可能基于旧结构改动、甚至覆盖别人已合并的内容 |
-| **推送前** | `bash tools/publish.sh "日常推送"` | 脚本内部会自动再同步一次（你干活期间 main 可能又更新了） |
+| **开工前** | `bash tools/sync.sh` | 把本地对齐到最新 main（工作区必须干净） |
+| **收工时** | `bash tools/publish.sh "日常推送"` | 一条命令完成：生成页面 -> 自检 -> 提交 -> 同步 main -> 推送 |
 
-只做一个都不够：**只做推送前** → 整段工作基于旧代码，冲突多还可能悄悄覆盖别人；**只做开工前** → 工作期间 main 又变了，推送时照样落后。
+**为什么两个时点都要做**
 
-> 顺序建议：`sync.sh`（开工）→ 让助手改内容 → `publish.sh "说明"`（收工，自动生成+自检+同步+提交+推送）
+- 只做收工：整段工作基于旧代码，冲突多，还可能覆盖别人已合并的内容
+- 只做开工：干活期间 main 又变了，推送时照样落后
+
+### 同步方式：默认 merge，不是 rebase（重要）
+
+- 你的分支**已经被管理员合并过**时，`git rebase origin/main` 会试图重放早已在 main 里的提交 -> **必然冲突**
+- 所以脚本默认用 `git merge --no-edit origin/main`：同样达到"同步 main"的目的，而且**不改写已推送的历史**（不需要 force push，更安全）
+- 若分支**尚未被合并**、而 main 上有别人的新提交，可以加 `--rebase` 得到更线性的历史：
+  `bash tools/publish.sh "日常推送" --rebase`
+- `tools/sync.sh` 会智能判断：本地提交都已被 main 吸收 -> 直接对齐 main；仍有未合并提交 -> 用 merge
+
+### 如果管理员问为什么不用 rebase
+
+> 我的分支被 PR 合并后，`rebase origin/main` 会因提交已在 main 中而冲突；改用 `git merge origin/main` 同样能同步 main，且不改写已推送历史、无需 force push。若团队更希望线性历史，我可以在分支被合并后先 `reset` 到 main 再开发。
 
 ## 1. 完全不用找 AI 的操作（0 成本）
 
@@ -232,52 +245,25 @@ bio_zh 改成「……」，bio_en 改成「……」
 
 ## 7. 发布流程
 
-**① 开工前先同步（管理员的要求，很重要）**
-
+**① 开工前**
 ```bash
-git fetch origin            # 必须！否则 origin/main 还是旧引用，rebase 等于空转
-git status                  # 工作区要干净（有改动先提交）
-git checkout update-tianqi
-git rebase origin/main      # 把本地提交重放到 main 最新之上
+cd "/d/BIRD Lab - Tianqi Yue/working path/DeepSeek Harness/BIRD Lab Web"
+bash tools/sync.sh
 ```
 
-- 也可以直接跑脚本：`.\tools\sync.ps1`（自动 fetch → 检查 → 变基，冲突会停下提示）
-- 有冲突不要硬来，找管理员或助手
+**② 干活**：自己改，或让助手改。改完**不用**手动跑生成器，发布脚本会做。
 
-**② 改内容 → 生成 → 自检**
-
-```
-改数据/材料 → 跑生成器 → 跑 check_site.py
-```
-
-**③ 提交并推送（一行命令，自动生成 + 自检）**
-脚本会自动：由数据源重新生成页面 → 跑全站自检（不通过就停下不提交）→ 暂存 → 提交 → 推送
-
+**③ 收工：一键发布**
 ```bash
-# 推荐：Git Bash 版（和你平时手动提交一样，只是自动化）
-bash tools/publish.sh "增加了成员"
-
-# 或者 PowerShell 版（必须能看到输出；不要用「右键 → 使用 PowerShell 运行」）
-powershell -NoProfile -ExecutionPolicy Bypass -File tools/publish.ps1 -Message "增加了成员"
+bash tools/publish.sh "日常推送"
 ```
 
-- 若脚本没有任何反应 / 窗口一闪而过：改用上面的 Git Bash 版；先跑 `bash -n tools/publish.sh` 只检查语法
-- 脚本会：拉取远程 → 规范化换行 → 暂存 → 提交 → 推送（普通推送失败会自动试 `--force-with-lease`）→ 打印给管理员的话术
-- **出错时脚本会停下等你看**，把屏幕上的信息截图发给助手即可
+脚本依次完成：
+1. 检查改动 2. 拉取远程 3. 由数据源重新生成页面 4. 全站自检（不通过就停下、不提交）
+5. 提交（说明用你给的那句） 6. 同步 main（merge） 7. 推送 8. 打印给管理员的话术
 
-- 想减少 main 上的 commit 数：推送前把本地多个提交压成一条
-  ```bash
-  git reset --soft origin/main     # 撤销提交但保留全部改动
-  git commit -m "增加了成员"        # 只留下一条
-  ```
-- 如果变基改写过已推送的历史，推送用：`git push --force-with-lease`
+参数：`--no-push`（只提交）｜`--skip-check`（跳过生成与自检）｜`--rebase`（分支未被合并时用）
 
-**④ 通知管理员合并**（`publish.ps1` 会打印可直接转发的话术）
+**④ 通知管理员**：复制脚本最后打印的那段话发给他。
 
-- 你不是仓库 owner：**推送到 `update-tianqi` 分支**，然后请管理员合并到 `main` 并发布
-- `publish.ps1` 跑完会直接打印一段可以直接发给管理员的话（含 commit 号）
-- **commit message 保持简短中文**（仓库是公开的，人人可见，不要写细节）：
-  `增加了成员`、`增加了新闻`、`修改了信息`、`更新了论文`、`调整了页面`；
-  不要写 `feat:` / `chore:` 前缀，不要罗列文件名或改动细节；
-  一次提交含多类改动时用最概括的一条，如 `增加了成员和新闻`
-- 不要推 `main`、不要动 `.git/`、`CNAME`
+> PowerShell 版（`tools/publish.ps1`、`tools/sync.ps1`）只是转调对应的 bash 脚本，行为一致；推荐直接用 Git Bash 版。
