@@ -21,13 +21,24 @@
 
 ---
 
+## 0.5 两个时点都要同步 main（很重要）
+
+| 时点 | 命令 | 为什么 |
+|---|---|---|
+| **开工前** | `bash tools/sync.sh` | 让改动基于 main 最新；否则可能基于旧结构改动、甚至覆盖别人已合并的内容 |
+| **推送前** | `bash tools/publish.sh "日常推送"` | 脚本内部会自动再同步一次（你干活期间 main 可能又更新了） |
+
+只做一个都不够：**只做推送前** → 整段工作基于旧代码，冲突多还可能悄悄覆盖别人；**只做开工前** → 工作期间 main 又变了，推送时照样落后。
+
+> 顺序建议：`sync.sh`（开工）→ 让助手改内容 → `publish.sh "说明"`（收工，自动生成+自检+同步+提交+推送）
+
 ## 1. 完全不用找 AI 的操作（0 成本）
 
 | 你要做的事 | 操作 |
 |---|---|
-| 改完内容后重新生成页面 | 运行 `tools\build_members.py`、`build_news.py`、`build_publications.py`、`build_chrome.py` |
-| 全站体检（链接/图片/双语/标签） | 运行 `tools\check_site.py` |
-| 提交并推送 | 右键 `tools\publish.ps1` → “使用 PowerShell 运行” |
+| **改完内容 → 提交并推送（全自动）** | `bash tools/publish.sh "日常推送"` —— 脚本会自动生成页面、跑全站自检、提交、推送 |
+| 只想生成页面 | 运行 `tools/build_members.py`、`build_news.py`、`build_publications.py`、`build_chrome.py` |
+| 只想体检 | 运行 `tools/check_site.py` |
 
 在 Git Bash / PowerShell 里运行 Python 的写法：
 
@@ -70,7 +81,8 @@ python tools\build_members.py
 **新闻**
 - 日期：取自文件名或你的指令（`2026.10.9-xxx.png` → 2026.10.09）
 - 配图：自动归档到 `images/news/`，PNG 自动转 JPG
-- 多张图片：默认「第 1 张完整 + 其余下排叠压」拼成一张
+- 多张图片：默认「第 1 张完整 + 其余下排叠压」拼成一张（要四宫格等分就说「拼四宫格」）
+- 照片偏暗：默认按平均亮度略微调亮（最多 +25%），不需要就说「不要调亮」
 - tag：按内容推断（Team Activity / Academic Talk / Exchange Visit 等）
 - 上首页：默认上新（不要就说「不上首页」）
 - 正文：你给了用你的；没给则我草拟（验收时可改）
@@ -204,6 +216,7 @@ bio_zh 改成「……」，bio_en 改成「……」
 | `tools/audit_members.py` | 成员数据字段完整性核对 |
 | `tools/inbox_ingest.py` | 解析 `inbox/` 里的成员 Word、归档、生成草稿 |
 | `tools/make_collage.py` | 活动照片拼图（主图 + 下排叠压） |
+| `tools/make_grid.py` | 活动照片等分宫格拼图（默认 2x2 四宫格，可整体调亮并另存单张） |
 | `tools/normalize_eol.py` | 换行统一为 LF（一般不需要手动跑） |
 | `tools/publish.sh` | **一键发布（Git Bash 版，推荐）**：`bash tools/publish.sh "增加了成员"` |
 | `tools/publish.ps1` | 一键发布（PowerShell 版）；正确运行方式见第 7 节，**不要右键运行**（窗口一闪而过看不到报错） |
@@ -237,7 +250,8 @@ git rebase origin/main      # 把本地提交重放到 main 最新之上
 改数据/材料 → 跑生成器 → 跑 check_site.py
 ```
 
-**③ 提交并推送**
+**③ 提交并推送（一行命令，自动生成 + 自检）**
+脚本会自动：由数据源重新生成页面 → 跑全站自检（不通过就停下不提交）→ 暂存 → 提交 → 推送
 
 ```bash
 # 推荐：Git Bash 版（和你平时手动提交一样，只是自动化）
