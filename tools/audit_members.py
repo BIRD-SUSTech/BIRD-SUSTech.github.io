@@ -4,6 +4,10 @@
 import json
 from pathlib import Path
 
+import sys as _sys
+if hasattr(_sys.stdout, "reconfigure"):
+    _sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data" / "members.json"
 
