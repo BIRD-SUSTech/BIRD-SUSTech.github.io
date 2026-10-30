@@ -13,7 +13,7 @@
 ## 2. 硬性约束（不可违反）
 
 - **不修改** `.git/`、`CNAME`、`.nojekyll`
-- **不执行 git 写操作**（add/commit/push/checkout/分支）：由用户本人在 Git Bash 完成；用户会自己提交
+- **不执行 git 写操作**（add/commit/push/checkout/分支）：由用户本人在 Git Bash 完成；用户会自己提交（**唯一例外**：任务开始时的安全自动同步，见第 9 节，用户已授权）
 - 用户是仓库协作者、**非 owner**：发布流程是「用户推送 `update-tianqi` 分支 → 通知管理员合并到 `main`」
 - **换行统一 LF**（`.gitattributes` 已强制）；写文件时用 LF，不要写 CRLF
 - **`.ps1` 脚本必须存为 UTF-8 with BOM**：Windows PowerShell 5.1 会按 GBK 解析无 BOM 的中文，导致脚本语法报错
@@ -39,7 +39,7 @@
 | `tools/build_news.py`、`tools/extract_news.py` | 新闻列表与首页卡片的生成 / 反向提取 |
 | `tools/inbox_ingest.py` | 解析 `inbox/` 里的成员 Word、归档并生成数据草稿（`--dry-run` 预演） |
 | `tools/publish.ps1` | **由用户本人运行**的一键发布脚本（规范化换行 + 提交 + 推送 + 管理员话术） |
-| `tools/sync.ps1` | **由用户本人运行**的开工前同步：fetch 远程 → 检查工作区 → rebase 到 `origin/main` |
+| `tools/sync.ps1` | 同步 main（PowerShell 版，转调 `sync.sh`）；`sync.sh --auto` 为助手在任务开始时调用的安全自动模式 |
 | `tools/normalize_eol.py` | 把文本文件换行统一为 LF（`--check` 只列出） |
 | `tools/extract_members_from_html.py` | 由现有 HTML 反向提取数据（一次性迁移用） |
 | `members/<slug>.html` | 成员个人页（**由生成器产出，不要手工改**） |
@@ -180,7 +180,8 @@ members/*.html  +  people.html 的成员卡片区
 - 用户会自己执行 git 提交；助手只在被要求时提供「变更清单 / commit 建议 / 给管理员的话术」
 - **commit message 必须简短中文**（仓库公开、所有人可见）：如「增加了成员」「增加了新闻」「修改了信息」；**不要**建议 `feat:` / `chore:` 前缀，也不要罗列文件或改动细节
 - 改动完成后：给**简略变更清单** + 建议的验证点
-- **提醒用户同步 main**：涉及提交/推送时，提醒用户先 `git fetch origin` 再 `git rebase origin/main`（或跑 `tools/sync.ps1`）；不要在未同步 main 的情况下建议直接推送
+- **任务开始时自动同步（用户已授权）**：开始动手前先执行 `bash tools/sync.sh --auto`（只做 fetch + merge，绝不 reset/rebase；工作区不干净或 fetch 失败会自动跳过）。若返回非 0（merge 冲突），把输出告知用户并停下等待指示
+- **绝不自动执行其他 git 写操作**：`merge` / `rebase` / `reset` / `checkout` / `commit` / `push` 一律由用户本人运行脚本完成；助手只做只读检查与提醒
 - **效率与准确性的边界**：为减少轮次可以合并命令、用脚本只提取所需字段；但**不得**因此省略自检（`check_site.py`）、关键字段核对（姓名/邮箱/日期/URL）、双语补齐、材料归档与变更清单。不确定的信息集中问一次，不要猜
 - 用户对布局与文案细节要求严格：涉及文案措辞或布局调整时，**先给方案让用户过目**，再动手
 - 报告用中文
