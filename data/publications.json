@@ -5,6 +5,39 @@
   },
   "items": [
     {
+      "id": "paper-smd-2026",
+      "year": "2026",
+      "research": "artificial-joints",
+      "keywords": [
+        "humanoid-robotics",
+        "transmission",
+        "actuation"
+      ],
+      "reveal_delay": 1,
+      "url": "https://www.sciexplor.com/smd/articles/smd.2026.0066",
+      "title_en": "Towards human-like behavior for robots: Recent progress in bionic shoulder joint design technologies",
+      "title_zh": "面向机器人类人行为：仿生肩关节设计技术的最新进展",
+      "authors_html": "<a href=\"members/mo-fei.html\">Fei Mo</a>, <a href=\"members/ye-guo.html\">Guo Ye</a>, <a href=\"members/gao-sen.html\">Sen Gao</a>, <a href=\"members/dong-ruilin.html\">Ruilin Dong</a>, <a href=\"members/you-qinghan.html\">Qinghan You</a>, <a href=\"members/zhu-xu.html\">Xu Zhu</a>, He Kong, Xueai Li, &amp; <a href=\"members/tianqi-yue.html\">Tianqi Yue</a>*",
+      "venue": "Smart Materials and Devices, 3, 202653, 2026.",
+      "tags": [
+        {
+          "slug": "humanoid-robotics",
+          "en": "Humanoid Robotics",
+          "zh": "人形机器人"
+        },
+        {
+          "slug": "transmission",
+          "en": "Transmission",
+          "zh": "传动"
+        },
+        {
+          "slug": "actuation",
+          "en": "Actuation",
+          "zh": "驱动"
+        }
+      ]
+    },
+    {
       "id": "paper-science-robotics-2025",
       "year": "2025",
       "research": "suction-adhesion",
@@ -13,7 +46,7 @@
         "soft-robotics",
         "physical-intelligence"
       ],
-      "reveal_delay": 1,
+      "reveal_delay": 2,
       "url": "https://doi.org/10.1126/scirobotics.adr4264",
       "title_en": "Embodying Soft Robots with Octopus-Inspired Hierarchical Suction Intelligence",
       "title_zh": "具身软体机器人的章鱼启发层级吸盘智能",
@@ -45,7 +78,7 @@
         "suction-adhesion",
         "climbing"
       ],
-      "reveal_delay": 2,
+      "reveal_delay": 3,
       "url": "https://doi.org/10.1038/s41467-024-48293-2",
       "title_en": "Snail-Inspired Water-Enhanced Soft Sliding Suction for Climbing Robots",
       "title_zh": "受蜗牛启发的水增强软体滑动吸附爬壁机器人",
@@ -72,7 +105,7 @@
         "suction-adhesion",
         "gripping"
       ],
-      "reveal_delay": 3,
+      "reveal_delay": 4,
       "url": "https://doi.org/10.1073/pnas.2314359121",
       "title_en": "Bioinspired Multiscale Adaptive Suction on Complex Dry Surfaces Enhanced by Regulated Water Secretion",
       "title_zh": "受调控水分泌增强的复杂干表面仿生多尺度自适应吸附",
@@ -100,7 +133,7 @@
         "gripping",
         "variable-stiffness"
       ],
-      "reveal_delay": 4,
+      "reveal_delay": 5,
       "url": "https://scholar.google.com/scholar?q=A%20Phase-Change%20Emulsion%20Jamming%20Gripper%20for%20Manipulation%20of%20Micro-Scale%20Textured%20Surfaces",
       "title_en": "A Phase-Change Emulsion Jamming Gripper for Manipulation of Micro-Scale Textured Surfaces",
       "title_zh": "用于微尺度纹理表面操控的相变乳液夹持器",
@@ -132,7 +165,7 @@
         "suction-adhesion",
         "gripping"
       ],
-      "reveal_delay": 5,
+      "reveal_delay": 6,
       "url": "https://scholar.google.com/scholar?q=Shape-Conformable%20Suction%20Cups%20with%20Controllable%20Adaptive%20Suction%20on%20Complex%20Surfaces",
       "title_en": "Shape-Conformable Suction Cups with Controllable Adaptive Suction on Complex Surfaces",
       "title_zh": "复杂表面上具有可控自适应吸附的形状贴合吸盘",
@@ -159,7 +192,7 @@
         "soft-robotics",
         "variable-stiffness"
       ],
-      "reveal_delay": 6,
+      "reveal_delay": 7,
       "url": "https://scholar.google.com/scholar?q=A%20Silicone-sponge-based%20Variable-stiffness%20Device",
       "title_en": "A Silicone-Sponge-Based Variable-Stiffness Device",
       "title_zh": "基于硅胶海绵的可变刚度装置",
@@ -186,7 +219,7 @@
         "suction-adhesion",
         "soft-robotics"
       ],
-      "reveal_delay": 7,
+      "reveal_delay": 8,
       "url": "https://scholar.google.com/scholar?q=Hydrogel-actuated%20Soft%20Sucker%20with%20Mucus%20Secretion",
       "title_en": "Hydrogel-Actuated Soft Sucker with Mucus Secretion",
       "title_zh": "具有黏液分泌功能的水凝胶驱动软体吸盘",
@@ -213,7 +246,7 @@
         "suction-adhesion",
         "soft-robotics"
       ],
-      "reveal_delay": 8,
+      "reveal_delay": 9,
       "url": "https://scholar.google.com/scholar?q=A%20Contact-triggered%20Adaptive%20Soft%20Suction%20Cup",
       "title_en": "A Contact-Triggered Adaptive Soft Suction Cup",
       "title_zh": "接触触发的自适应软体吸盘",
@@ -239,7 +272,7 @@
       "keywords": [
         "soft-robotics"
       ],
-      "reveal_delay": 9,
+      "reveal_delay": 10,
       "url": "https://scholar.google.com/scholar?q=Friction-driven%20three-foot%20robot%20inspired%20by%20snail%20movement",
       "title_en": "Friction-Driven Three-Foot Robot Inspired by Snail Movement",
       "title_zh": "受蜗牛运动启发的摩擦驱动三足机器人",

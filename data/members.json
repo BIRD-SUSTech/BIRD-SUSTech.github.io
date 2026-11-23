@@ -76,8 +76,17 @@
       ],
       "publications": [
         {
+          "title_en": "Towards human-like behavior for robots: Recent progress in bionic shoulder joint design technologies",
+          "title_zh": "面向机器人类人行为：仿生肩关节设计技术的最新进展",
+          "authors_html": "<a href=\"members/mo-fei.html\">Fei Mo</a>, <a href=\"members/ye-guo.html\">Guo Ye</a>, <a href=\"members/gao-sen.html\">Sen Gao</a>, <a href=\"members/dong-ruilin.html\">Ruilin Dong</a>, <a href=\"members/you-qinghan.html\">Qinghan You</a>, <a href=\"members/zhu-xu.html\">Xu Zhu</a>, He Kong, Xueai Li, &amp; <a href=\"members/tianqi-yue.html\">Tianqi Yue</a>",
+          "venue": "Smart Materials and Devices, 3, 202653, 2026.",
+          "badge_en": "",
+          "badge_zh": ""
+        },
+        {
           "title_en": "\"Super Retarding-Flame Wood\"",
           "title_zh": "《超阻燃木材》",
+          "authors_html": "Sen Gao, Jing Ren, Baoping Zhang, Lixian Yang, Yiqiang Wu, Yingying Zhang, Leitao Cao, Qing Li, Chunlei Zhang, Mingyue Miao, Haipeng Yu, Shouxin Liu, Jian Li, Shengjie Ling, Wenshuai Chen, &amp; Zuankai Wang",
           "venue": "Science Bulletin, 71(10), 2508-2517.",
           "badge_en": "Pre-BIRD personal work",
           "badge_zh": "加入课题组前个人成果"
@@ -114,7 +123,16 @@
           "zh": "2021~2025 · 中国科学院大学 · 生物医学工程 · 工学硕士"
         }
       ],
-      "publications": []
+      "publications": [
+        {
+          "title_en": "Towards human-like behavior for robots: Recent progress in bionic shoulder joint design technologies",
+          "title_zh": "面向机器人类人行为：仿生肩关节设计技术的最新进展",
+          "authors_html": "<a href=\"members/mo-fei.html\">Fei Mo</a>, <a href=\"members/ye-guo.html\">Guo Ye</a>, <a href=\"members/gao-sen.html\">Sen Gao</a>, <a href=\"members/dong-ruilin.html\">Ruilin Dong</a>, <a href=\"members/you-qinghan.html\">Qinghan You</a>, <a href=\"members/zhu-xu.html\">Xu Zhu</a>, He Kong, Xueai Li, &amp; <a href=\"members/tianqi-yue.html\">Tianqi Yue</a>",
+          "venue": "Smart Materials and Devices, 3, 202653, 2026.",
+          "badge_en": "",
+          "badge_zh": ""
+        }
+      ]
     },
     {
       "slug": "zhu-xu",
@@ -150,7 +168,16 @@
           "zh": "2022-2024 · 地平线 · 自动驾驶预测算法工程师"
         }
       ],
-      "publications": []
+      "publications": [
+        {
+          "title_en": "Towards human-like behavior for robots: Recent progress in bionic shoulder joint design technologies",
+          "title_zh": "面向机器人类人行为：仿生肩关节设计技术的最新进展",
+          "authors_html": "<a href=\"members/mo-fei.html\">Fei Mo</a>, <a href=\"members/ye-guo.html\">Guo Ye</a>, <a href=\"members/gao-sen.html\">Sen Gao</a>, <a href=\"members/dong-ruilin.html\">Ruilin Dong</a>, <a href=\"members/you-qinghan.html\">Qinghan You</a>, <a href=\"members/zhu-xu.html\">Xu Zhu</a>, He Kong, Xueai Li, &amp; <a href=\"members/tianqi-yue.html\">Tianqi Yue</a>",
+          "venue": "Smart Materials and Devices, 3, 202653, 2026.",
+          "badge_en": "",
+          "badge_zh": ""
+        }
+      ]
     },
     {
       "slug": "yang-chong",
@@ -214,7 +241,16 @@
           "zh": "2025~至今 · 南方科技大学 · 电子信息 · 在读硕士"
         }
       ],
-      "publications": []
+      "publications": [
+        {
+          "title_en": "Towards human-like behavior for robots: Recent progress in bionic shoulder joint design technologies",
+          "title_zh": "面向机器人类人行为：仿生肩关节设计技术的最新进展",
+          "authors_html": "<a href=\"members/mo-fei.html\">Fei Mo</a>, <a href=\"members/ye-guo.html\">Guo Ye</a>, <a href=\"members/gao-sen.html\">Sen Gao</a>, <a href=\"members/dong-ruilin.html\">Ruilin Dong</a>, <a href=\"members/you-qinghan.html\">Qinghan You</a>, <a href=\"members/zhu-xu.html\">Xu Zhu</a>, He Kong, Xueai Li, &amp; <a href=\"members/tianqi-yue.html\">Tianqi Yue</a>",
+          "venue": "Smart Materials and Devices, 3, 202653, 2026.",
+          "badge_en": "",
+          "badge_zh": ""
+        }
+      ]
     },
     {
       "slug": "you-qinghan",
@@ -246,7 +282,16 @@
           "zh": "2026~Now · 南方科技大学 · 控制科学与工程 · 工学硕士"
         }
       ],
-      "publications": []
+      "publications": [
+        {
+          "title_en": "Towards human-like behavior for robots: Recent progress in bionic shoulder joint design technologies",
+          "title_zh": "面向机器人类人行为：仿生肩关节设计技术的最新进展",
+          "authors_html": "<a href=\"members/mo-fei.html\">Fei Mo</a>, <a href=\"members/ye-guo.html\">Guo Ye</a>, <a href=\"members/gao-sen.html\">Sen Gao</a>, <a href=\"members/dong-ruilin.html\">Ruilin Dong</a>, <a href=\"members/you-qinghan.html\">Qinghan You</a>, <a href=\"members/zhu-xu.html\">Xu Zhu</a>, He Kong, Xueai Li, &amp; <a href=\"members/tianqi-yue.html\">Tianqi Yue</a>",
+          "venue": "Smart Materials and Devices, 3, 202653, 2026.",
+          "badge_en": "",
+          "badge_zh": ""
+        }
+      ]
     },
     {
       "slug": "dong-ruilin",
@@ -280,8 +325,17 @@
       ],
       "publications": [
         {
+          "title_en": "Towards human-like behavior for robots: Recent progress in bionic shoulder joint design technologies",
+          "title_zh": "面向机器人类人行为：仿生肩关节设计技术的最新进展",
+          "authors_html": "<a href=\"members/mo-fei.html\">Fei Mo</a>, <a href=\"members/ye-guo.html\">Guo Ye</a>, <a href=\"members/gao-sen.html\">Sen Gao</a>, <a href=\"members/dong-ruilin.html\">Ruilin Dong</a>, <a href=\"members/you-qinghan.html\">Qinghan You</a>, <a href=\"members/zhu-xu.html\">Xu Zhu</a>, He Kong, Xueai Li, &amp; <a href=\"members/tianqi-yue.html\">Tianqi Yue</a>",
+          "venue": "Smart Materials and Devices, 3, 202653, 2026.",
+          "badge_en": "",
+          "badge_zh": ""
+        },
+        {
           "title_en": "\"Natural Movement-Based Pose Optimization for Robot-Guided Upper-Limb Rehabilitation System\"",
           "title_zh": "《基于自然运动的机器人辅助上肢康复系统姿态优化》",
+          "authors_html": "Shuyan Huang, Yongcan Zhu, Ruilin Dong, Chengyu Lin, Junyun Fu, Jinxin Sun, &amp; Chenglong Fu",
           "venue": "IEEE Transactions on Medical Robotics and Bionics (Early Access)",
           "badge_en": "Pre-BIRD personal work",
           "badge_zh": "加入课题组前个人成果"

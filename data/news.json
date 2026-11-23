@@ -31,6 +31,32 @@
       }
     },
     {
+      "id": "2026-11-16",
+      "date": "2026.11.16",
+      "pinned": false,
+      "image": "images/news/2026-11-16.jpg",
+      "reveal_delay": 0,
+      "title_en": "BIRD Lab reviews bionic shoulder joint design in Smart Materials and Devices",
+      "title_zh": "BIRD Lab 仿生肩关节设计综述在 Smart Materials and Devices 发表",
+      "body_en": "Our mini review on bionic shoulder joint design technologies has been published in Smart Materials and Devices. First-authored by PhD student <a href=\"members/mo-fei.html\">Fei Mo</a>, the paper classifies robotic shoulder joints into drive-transmission integrated and separated architectures, benchmarks them against the hybrid constraints of the human glenohumeral joint, and identifies design trends for next-generation bionic shoulders in humanoid robots.",
+      "body_zh": "实验室综述论文《面向机器人类人行为：仿生肩关节设计技术的最新进展》在 Smart Materials and Devices 发表，由博士研究生<a href=\"members/mo-fei.html\">莫菲</a>主导完成。文章以驱动-传动架构为线索，把机器人肩关节分为「驱动-传动一体」与「驱动-传动分离」两大类，并与人体盂肱关节的混合约束机制逐项对比，指出下一代人形机器人仿生肩关节的核心挑战与设计趋势。",
+      "link": {
+        "url": "publications.html#paper-smd-2026",
+        "en": "View Publications →",
+        "zh": "查看论文 →"
+      },
+      "tag_en": "Bionic Shoulder Joint",
+      "tag_zh": "仿生肩关节",
+      "in_news": true,
+      "on_home": true,
+      "home_title_en": "",
+      "home_title_zh": "",
+      "home_reveal_delay": 2,
+      "home_body_en": "Our mini review on bionic shoulder joint design for humanoid robots is out in Smart Materials and Devices, proposing a drive-transmission taxonomy benchmarked against the human shoulder.",
+      "home_body_zh": "实验室关于仿生肩关节设计技术的综述在 Smart Materials and Devices 发表，提出「驱动-传动一体 / 分离」的分类框架，并与人体肩关节逐项对比。",
+      "home_link": null
+    },
+    {
       "id": "2026-10-29",
       "date": "2026.10.29",
       "pinned": false,
