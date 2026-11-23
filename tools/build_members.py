@@ -127,18 +127,23 @@ def build_page(m):
             </ul>"""))
         parts.append("")
 
-    # 论文发表（可含 Google Scholar 链接）
-    if m.get("publications") or m.get("scholar_url"):
+    # 论文发表（PI 页不显示该区块；条目含作者列表；可含 Google Scholar 链接）
+    if not is_pi and (m.get("publications") or m.get("scholar_url")):
         items = []
         for p in m["publications"]:
             badge = ""
             if p.get("badge_en") or p.get("badge_zh"):
                 badge = f"""
                     <span class="badge">{i18n(p['badge_en'], p['badge_zh'])}</span>"""
+            authors = ""
+            if p.get("authors_html"):
+                # 数据源与 publications.html 共用 `members/<slug>.html`；成员页本身在 members/ 下，去掉前缀
+                authors = f"""
+                <div class="pub-authors">{p['authors_html'].replace('href="members/', 'href="')}</div>"""
             items.append(f"""            <div class="pub-item">
                 <div class="pub-title">
                     {i18n(p['title_en'], p['title_zh'])}{badge}
-                </div>
+                </div>{authors}
                 <div class="pub-venue">{p['venue']}</div>
             </div>""")
         if m.get("scholar_url"):

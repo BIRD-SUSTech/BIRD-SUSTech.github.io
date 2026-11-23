@@ -86,16 +86,55 @@ members/*.html  +  people.html 的成员卡片区
 - **材料没写专业/院系**：改用材料里能确定的信息（如「所属院校」），或把 `meta_label_en/zh` 与 `meta_value_en/zh` 都留空 → 该行不显示
 - **材料只给了 Google Scholar（或其他主页）链接**：写入 `scholar_url`，论文区会显示一行「Google Scholar: 链接」
 
-### C. 更新论文（publications.html）
-1. 在 `data/publications.json` 的 `items` 中增改条目（标题中英、DOI 链接、作者、期刊、年份、研究方向、关键词、标签）
-2. 如出现新关键词，同时加入 `keyword_options`（筛选下拉与论文标签共用）
-3. 运行 `python tools/build_publications.py`
-4. 运行 `python tools/check_site.py` 自检后汇报
+### C. 新增/更新论文（publications.html + 相关成员页）
+
+**输入**：用户通常只给一个论文网址（DOI、期刊页或 Google Scholar 主页）。
+
+1. **识别论文信息**
+   - 网址或文本里含 DOI（形如 `10.xxxx/xxxxx`）时，抓 CrossRef 元数据：
+     `web_fetch https://api.crossref.org/works/<DOI>`，读取 `title[0]`、`author[]` 的 given/family、
+     `container-title`、`published`/`issued` 的年份、`volume`/`issue`/`article-number`、`DOI`
+   - 非 DOI 网址：用 `web_fetch` 抓页面提取；仍缺字段 → **一次性集中问用户**
+     （标题中英 / 作者 / 期刊 / 年份 / DOI），不要猜
+   - **链接必须实测可打开**：写入前访问一次 `https://doi.org/<DOI>`；若 404（DOI 未激活，
+     新刊常见，CrossRef 也可能查不到）→ 改用出版社文章页网址，并在汇报里说明
+2. **鉴别实验室成员（关键，不要擅自加链接）**
+   - 用 `data/members.json` 的 `name_en`（全名，忽略大小写）与 `name_zh` 逐位比对作者；
+     兼容 "First Last"、"Last, First"、姓+名首字母缩写等写法
+   - 匹配到 → 该作者名加链接 `members/<slug>.html`；**未匹配 → 保持纯文本**
+   - 有重名 / 缩写歧义 → 集中问用户一次
+3. **写入 `data/publications.json`**
+   - 在 `items` 中新增一条：`id`（唯一，如 `paper-<首作者姓>-<year>`）、`year`、
+     `research`（取 `research_options` 里的 slug）、`keywords`（取 `keyword_options` 里的 slug）、
+     `title_en`（元数据原文）、`title_zh`（助手翻译）、`url`（DOI 链接）、
+     `authors_html`（按原顺序拼接，成员姓名加 `<a href="members/<slug>.html">`）、
+     `venue`（期刊 + 卷期页码）、`reveal_delay`、`tags`（keyword → 标签，取自 `keyword_options`）
+   - **年份取「在线发表日期」（published / online first）所在年份**，不采用卷期标注年份；`venue` 末尾年份须与 `year` 一致
+     （例：SMD 卷期写作 2027;3:202653、online 发表 2026-11-09 → `year: "2026"`，venue `… 3, 202653, 2026.`）
+   - 出现新关键词：同时补进 `keyword_options`（筛选下拉与标签共用）
+4. **同步成员个人页**
+   - 对每位匹配到的成员，在 `data/members.json` 的 `publications` 数组追加：
+     `{"title_en": …, "title_zh": …, "authors_html": …, "venue": …, "badge_en": "", "badge_zh": ""}`
+   - `authors_html` 必填：**与 publications.html 同一份作者串**（按原文顺序，成员姓名加链接），
+     但去掉 `*` / `†` 等脚注标记（成员页无脚注图例）。历史条目缺该字段时顺手补上
+   - **PI（`group: "pi"`，岳天奇）不写 `publications`，其页面不显示论文区**：数据保持空数组，
+     `build_members.py` 已硬性跳过 PI 的 Publications 区块；实验室论文统一在 `publications.html` 展示
+5. **生成与自检**
+   - `python tools/build_publications.py` → `python tools/build_members.py` → `python tools/check_site.py`
+6. **汇报**：改了哪些文件、哪几位成员的页面新增了这篇论文、请用户刷新验证
+
+> 说明：`publications.html` 里旧论文的成员链接写成 `people.html#tianqi-yue`（历史写法）；
+> **新论文统一用 `members/<slug>.html`**，旧条目可择机统一，不必在本次改动。
 
 ### D. 更新新闻（news.html + 首页 Latest News）
 1. 在 `data/news.json` 的 `items` 中增改条目：`in_news` 控制是否出现在新闻页，`on_home` 控制是否出现在首页；首页可用 `home_title_*` / `home_body_*` / `home_link` 覆盖文案
 2. 配图放 `images/news/`，在条目 `image` 写明路径
 3. 运行 `python tools/build_news.py`，再跑 `python tools/check_site.py`
+4. **论文发表类新闻的写法（硬性）**
+   - 正文只写**第一作者**（有共同第一作者则一并写），姓名加链接 `<a href="members/<slug>.html">`；不要罗列全部作者
+   - 中文动词用「**主导**」，**不要用「主笔」**
+   - 中文姓名一律取自 `data/members.json` 的 `name_zh`，**禁止自行音译**（例：莫菲 / 有擎翰 / 董瑞麟）
+   - 链接改动后必须重跑 `build_news.py` + `check_site.py`（自检会验链接有效性）
 
 ### E. 改导航栏 / 页脚（全站）
 1. 编辑 `tools/chrome.py`（导航项、页脚链接、页脚文案）
@@ -134,8 +173,8 @@ members/*.html  +  people.html 的成员卡片区
       "education": [                       // 教育经历列表
         { "en": "2023 – 2027 · …", "zh": "2023~2027 · …" }
       ],
-      "publications": [                    // 可空数组
-        { "title_en": "…", "title_zh": "…", "venue": "…", "badge_en": "…", "badge_zh": "…" }
+      "publications": [                    // 可空数组；PI 页面不显示论文区（保持空数组）
+        { "title_en": "…", "title_zh": "…", "authors_html": "…", "venue": "…", "badge_en": "…", "badge_zh": "…" }
       ],
       "scholar_url": "https://scholar.google.com/citations?user=…"  // 可选；无论文或想给主页时，论文区会显示「Google Scholar: 链接」
     }
